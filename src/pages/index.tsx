@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/pages/MainPage.module.css";
 import LocaleSwitcher from "../components/localeSwitcher/LocaleSwitcher";
 import { useLocale } from "../hooks/useLocale";
 
