@@ -1,0 +1,8 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    z-index: 1001;
+    backdrop-filter: blur(8px);
+    background-color: rgba(31,27,46,.88);
+}
