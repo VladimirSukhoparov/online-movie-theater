@@ -1,0 +1,14 @@
+@import "../../styles/colors.scss";
+
+.link {
+    margin-right: 10px;
+    color: $color-white-48;
+    text-decoration: none;
+    &:hover {
+        color: $color-white;
+    }
+    &_active {
+        color: $color-white;
+        font-weight: 700;
+    }
+}
