@@ -59,6 +59,20 @@
     }
 }
 
+@media (max-width: 1160px) {
+    .header {
+        .header_body {
+            .header_content {
+                .header_content_first {
+                    nav {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 600px) {
     .header {
         width: 100%;
