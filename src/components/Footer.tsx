@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "../styles/components/footer/Footer.module.scss";
 import { useLocale } from '../hooks/useLocale';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
     const translation = useLocale();
@@ -32,8 +32,8 @@ const Footer = () => {
                 <ul>
                     {translation.footer_mobile.map((el) => {
                         return (
-                            <Link href={el.path}>
-                                <li key={el.text}>
+                            <Link href={el.path} key={el.text}>
+                                <li >
                                     <img src={el.img} alt="" />
                                     <span>{el.text}</span>
                                 </li>
