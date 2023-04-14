@@ -1,50 +1,42 @@
-import React from 'react';
+import React from "react";
 import styles from "../styles/components/footer/Footer.module.scss";
-import { useLocale } from '../hooks/useLocale';
-import Link from 'next/link';
+import { useLocale } from "../hooks/useLocale";
+import Link from "next/link";
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
-    const translation = useLocale();
-    return (
-        <>
-        <div className={styles.footer_container}>
-            <hr />
-            <div className={styles.footer_first_content}>
-                    {translation.footer_ul.map((item: string[]) => {
-                        const li = item.map((el) => {
-                            return(
-                                <li>
-                                    {el}
-                                </li>
-                            )
-                        })
-                        return (
-                            <ul>
-                                {li}
-                            </ul>
-                        )
-                    })}
-            </div>
+  const translation = useLocale();
+  return (
+    <>
+      <div className={styles.footer_container}>
+        <hr />
+        <div className={styles.footer_first_content}>
+          {translation.footer_ul.map((item: string[]) => {
+            const li = item.map((el) => {
+              return <li key={item.indexOf(el)}>{el}</li>;
+            });
+            return <ul key={translation.footer_ul.indexOf(item)}>{li}</ul>;
+          })}
         </div>
-        <div className={styles.footer_mobile}>
-            <nav>
-                <ul>
-                    {translation.footer_mobile.map((el) => {
-                        return (
-                            <Link href={el.path} key={el.text}>
-                                <li >
-                                    <img src={el.img} alt="" />
-                                    <span>{el.text}</span>
-                                </li>
-                            </Link>
-                        )
-                    })}
-                </ul>
-            </nav> 
-        </div>
-        </>
-    );
+      </div>
+      <div className={styles.footer_mobile}>
+        <nav>
+          <ul>
+            {translation.footer_mobile.map((el) => {
+              return (
+                <Link href={el.path} key={el.text}>
+                  <li>
+                    <img src={el.img} alt="" />
+                    <span>{el.text}</span>
+                  </li>
+                </Link>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+    </>
+  );
 };
 
 export default Footer;

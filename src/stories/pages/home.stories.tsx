@@ -1,3 +1,4 @@
+import React from "react";
 import Home from "../../pages/index";
 
 export default {
@@ -5,4 +6,4 @@ export default {
   component: Home,
 };
 
-export const HomePage = () => <Home />
+export const HomePage = () => <Home />;
