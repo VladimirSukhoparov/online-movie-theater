@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/pages/MainPage.module.css";
-import LocaleSwitcher from "../components/localeSwitcher/LocaleSwitcher";
+import LocaleSwitcher from "../components/LocaleSwitcher";
 import { useLocale } from "../hooks/useLocale";
 
 const inter = Inter({ subsets: ["latin"] });

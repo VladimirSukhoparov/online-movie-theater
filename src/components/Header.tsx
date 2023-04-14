@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../../styles/components/header/Header.module.scss";
-import { useLocale } from "../../hooks/useLocale";
+import styles from "../styles/components/header/Header.module.scss";
+import { useLocale } from "../hooks/useLocale";
 import Link from "next/link";
 
 const Header = () => {

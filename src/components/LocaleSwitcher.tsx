@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 import React from "react";
 import { FC } from "react";
 import Link from "next/link";
-import styles from "../../styles/components/LocaleSwitcher.module.scss";
-import { useLocale } from "../../hooks/useLocale";
+import styles from "../styles/components/LocaleSwitcher.module.scss";
+import { useLocale } from "../hooks/useLocale";
 
 const LocaleSwitcher: FC = () => {
     const { pathname, query, locale } = useRouter();
