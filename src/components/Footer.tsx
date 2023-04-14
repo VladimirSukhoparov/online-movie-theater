@@ -7,10 +7,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Footer = () => {
     const translation = useLocale();
     return (
-        <div className={styles.footer}>
+        <>
+        <div className={styles.footer_container}>
+            <hr />
+            <div className={styles.footer_first_content}>
+                    {translation.footer_ul.map((item: string[]) => {
+                        const li = item.map((el) => {
+                            return(
+                                <li>
+                                    {el}
+                                </li>
+                            )
+                        })
+                        return (
+                            <ul>
+                                {li}
+                            </ul>
+                        )
+                    })}
+            </div>
+        </div>
+        <div className={styles.footer_mobile}>
             <nav>
                 <ul>
-                    {translation.header.map((el) => {
+                    {translation.footer_mobile.map((el) => {
                         return (
                             <Link href={el.path}>
                                 <li key={el.text}>
@@ -23,6 +43,7 @@ const Footer = () => {
                 </ul>
             </nav> 
         </div>
+        </>
     );
 };
 
