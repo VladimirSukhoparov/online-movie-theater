@@ -1,0 +1,29 @@
+
+$white:#fff;
+
+.footer_third_button{
+    width: 196px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #1f1b2e;
+    border: none;
+    color: $white;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    &:hover{
+        background-color: #2e2844;
+    }
+}
+
+.header_subscribe {
+    width: 182px;
+    height: 32px;
+    background-color: #ea003d;
+    color: white;
+    border: 0px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}

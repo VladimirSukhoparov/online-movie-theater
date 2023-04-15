@@ -3,6 +3,7 @@ import styles from "../styles/components/header/Header.module.scss";
 import { useLocale } from "../hooks/useLocale";
 import Link from "next/link";
 import LocaleSwitcher from "./LocaleSwitcher";
+import Button from "./reusedСomponents/Button";
 
 const Header = () => {
   const translation = useLocale();
@@ -29,7 +30,8 @@ const Header = () => {
           </div>
           <div className={styles.header_content_second}>
             <LocaleSwitcher></LocaleSwitcher>
-            <button>Смотреть 30 дней за 1 ₽</button>
+            <Button classN='header_subscribe' type='button' children={translation.header_subscribe}/>
+            {/* <button>Смотреть 30 дней за 1 ₽</button> */}
             <img
               src="https://icones.pro/wp-content/uploads/2022/02/icone-de-cloche-grise.png"
               alt=""
