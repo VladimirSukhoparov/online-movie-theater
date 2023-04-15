@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styles from "../styles/components/footer/Footer.module.scss";
 import { useLocale } from '../hooks/useLocale';
 import Link from 'next/link';
