@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/components/footer/Footer.module.scss";
 import { useLocale } from '../hooks/useLocale';
 import Link from 'next/link';
+import Button from "./reusedСomponents/Button";
 
 const Footer = () => {
     const translation = useLocale();
@@ -31,9 +32,10 @@ const Footer = () => {
                         <span>
                         {translation.footer_third_span}
                         </span>
-                        <button>
+                        <Button classN='footer_third_button' type='button' children={translation.footer_third_button}/>
+                       {/*  <button>
                             {translation.footer_third_button}
-                        </button>
+                        </button> */}
                         <div className={styles.third_content_buttons}>
                             <button>
                             <img src="https://img.icons8.com/ios-filled/50/FFFFFF/new-post.png"/>
