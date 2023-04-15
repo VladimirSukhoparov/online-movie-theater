@@ -53,6 +53,11 @@ export const ru = {
         "Активация сертификата"
     ]
   ],
+  footer_third_title: "Служба поддержки",
+  footer_third_span: "Мы всегда готовы вам помочь. Наши операторы онлайн 24/7", 
+  footer_third_button: "Написать в чате",
+  footer_third_p: "Ответы на вопросы",
+  footer_fourth: "Смотрите фильмы, сериалы и мультфильмы без рекламы",
   footer_mobile: [
     {
       text: "Мой Иви",

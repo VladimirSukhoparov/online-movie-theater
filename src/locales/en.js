@@ -53,6 +53,11 @@ export const en = {
         "Certificate activation"
     ]
   ],
+  footer_third_title: "Support",
+  footer_third_span: "We are always ready to help you. Our operators are online 24/7", 
+  footer_third_button: "Comment in chat",
+  footer_third_p: "Answers on questions",
+  footer_fourth: "Watch movies, series and cartoons without ads",
   footer_mobile: [
     {
       text: "My IVI",
