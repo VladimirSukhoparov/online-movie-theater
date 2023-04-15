@@ -19,7 +19,7 @@ const Header = () => {
               <ul>
                 {translation.header.map((el) => {
                   return (
-                    <Link href={el.path}>
+                    <Link href={el.path} key={el.text}>
                       <li>{el.text}</li>
                     </Link>
                   );
