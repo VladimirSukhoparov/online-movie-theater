@@ -1,0 +1,45 @@
+@import "../global/colors.scss";
+
+.container {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.replacement {
+    height: inherit;
+    width: 20px;
+}
+
+.arrow {
+    height: inherit;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__icon {
+        color: $color-white-72;
+        font-size: 32px;
+        transition-duration: 0.4s;
+        &:hover {
+            color: $color-white;
+        }
+    }
+}
+
+.gallery {
+    max-width: 1216px;
+    overflow: hidden;
+    @media (max-width: 1279px) {
+        width: 100%;
+    }
+    & ul {
+        width: 9999px;
+        transition-duration: 1s;
+        & li {
+            display: inline-block;
+            margin-right: 24px;
+        }
+    }
+}
