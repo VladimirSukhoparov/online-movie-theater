@@ -7,9 +7,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage9/contents/7/a/f1fdf81472f76cc5950e0f4ef30060.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number1.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number1.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -20,9 +22,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage9/contents/b/6/356258bbe7c5ba5b5b40251be3d48f.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number2.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number2.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -33,9 +37,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage28/contents/e/e/2b49a5aa4d8ab07304588192853bee.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number3.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number3.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -46,9 +52,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage30/contents/a/a/c55629c1cb82b0ac7c0d9aca539d89.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number4.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number4.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -59,9 +67,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage9/contents/d/e/14ad136916cb3797041ef18a0b6149.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number5.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number5.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -72,9 +82,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage2/contents/5/0/5a82ac6f5942eeea490540feca0a62.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number6.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number6.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -85,9 +97,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage9/contents/0/7/c29756fa4d94a6ba334836e7820b3a.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number7.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number7.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -98,9 +112,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage28/contents/f/4/9d0d6b3e5fd0cd0a35080f6950d1c6.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number8.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number8.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -111,9 +127,11 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage4/contents/e/1/701622d611211cc2e765049cd61492.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number9.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number9.svg"
+            }
+        ],
         "link": ""
     },
     {
@@ -124,9 +142,14 @@
         "name": {
             "src": "https://thumbs.dfs.ivi.ru/storage28/contents/4/8/c0919a0f0fce59bcaaa0ca5dea3dec.png/x200/?q=85"
         },
-        "number": {
-            "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number1.svg"
-        },
+        "numbers": [
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number1.svg"
+            },
+            {
+                "src": "https://solea-parent.dfs.ivi.ru/picture/bypass/number0.svg"
+            }
+        ],
         "link": ""
     }
 ]
