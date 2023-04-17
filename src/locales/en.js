@@ -87,4 +87,5 @@ export const en = {
         },
     ],
     of_the_week: "of the week",
+    show_selection: "Show selection",
 };

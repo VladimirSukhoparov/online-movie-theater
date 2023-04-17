@@ -8,9 +8,10 @@ import styles from "../styles/components/ImageCarousel.module.scss";
 
 interface ImageCarouselProps {
     items: JSX.Element[];
+    oneItemMod?: boolean;
 }
 
-const ImageCarousel: FC<ImageCarouselProps> = ({ items }) => {
+const ImageCarousel: FC<ImageCarouselProps> = ({ items, oneItemMod }) => {
     const ITEM_GAP = 24;
     const [galleryWidth, setGalleryWidth] = useState(0);
     const [itemWidth, setItemWidth] = useState(0);
@@ -31,7 +32,9 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ items }) => {
         setItemWidth(li.current.offsetWidth);
     }, []);
     const onLeftClick = () => {
-        const newPos = position + galleryWidth - itemWidth;
+        const newPos = oneItemMod
+            ? position + galleryWidth + ITEM_GAP
+            : position + galleryWidth - itemWidth;
         if (newPos > 0) {
             setPosition(0);
         } else {
@@ -39,7 +42,9 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ items }) => {
         }
     };
     const onRightClick = () => {
-        const newPos = position - galleryWidth + itemWidth;
+        const newPos = oneItemMod
+            ? position - itemWidth - ITEM_GAP
+            : position - galleryWidth + itemWidth;
         if (Math.abs(newPos) > maxWidth) {
             setPosition(-maxWidth);
         } else {
