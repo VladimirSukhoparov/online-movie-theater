@@ -27,7 +27,7 @@ export default function Home() {
                         <Top10Card
                             image={item.image}
                             name={item.name}
-                            number={item.number}
+                            numbers={item.numbers}
                             link={item.link}
                         />
                     ))}
