@@ -59,6 +59,27 @@ export const ru = {
     footer_third_button: "Написать в чате",
     footer_third_p: "Ответы на вопросы",
     footer_fourth: "Смотрите фильмы, сериалы и мультфильмы без рекламы",
+    footer_second_ul: [
+      {
+        img: "https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/appleLogo.svg",
+        p: "Загрузить в",
+        text: "App Store",
+      },
+      {
+        img: "https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/googlePlayLogo.svg",
+        p: "Доступно в",
+        text: "Google Play",
+      },
+      {
+        img: "https://img.icons8.com/sf-black-filled/64/FFFFFF/tv.png",
+        p: "Смотрите на",
+        text: "Smart TV",
+      },
+      {
+        img: "https://img.icons8.com/ios/50/FFFFFF/multiple-devices.png",
+        text: "Все устройства",
+      }
+    ],
     footer_mobile: [
         {
             text: "Мой Иви",
