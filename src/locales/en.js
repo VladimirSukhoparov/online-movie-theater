@@ -59,6 +59,27 @@ export const en = {
     footer_third_button: "Comment in chat",
     footer_third_p: "Answers on questions",
     footer_fourth: "Watch movies, series and cartoons without ads",
+    footer_second_ul: [
+      {
+        img: "https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/appleLogo.svg",
+        p: "Upload to",
+        text: "App Store",
+      },
+      {
+        img: "https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/googlePlayLogo.svg",
+        p: "Available in",
+        text: "Google Play",
+      },
+      {
+        img: "https://img.icons8.com/sf-black-filled/64/FFFFFF/tv.png",
+        p: "Look at",
+        text: "Smart TV",
+      },
+      {
+        img: "https://img.icons8.com/ios/50/FFFFFF/multiple-devices.png",
+        text: "All devices",
+      }
+    ],
     footer_mobile: [
         {
             text: "My IVI",
