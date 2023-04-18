@@ -1,5 +1,8 @@
 import React from "react";
 import Button from "../../../components/reusedСomponents/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
+
 import '../../../styles/components/reusedСomponents/Button.module.scss'
 
 export default {
@@ -19,7 +22,8 @@ export default {
         type:'string',
         description:'Класснэйм кнопки',
         defaultValue:'',
-        options:['header_subscribe','footer_third_button'],
+        options:['header_subscribe','footer_third_button','second_content',"header_notification",
+        "header_login"],
         control:{
             type:'radio'
         }
@@ -37,7 +41,8 @@ export default {
  Default.args = {
     children: 'Нажми на меня',
     type:['button','reset','submit'],
-    classN:['header_subscribe','footer_third_button'],
+    classN:['header_subscribe','footer_third_button','second_content',"header_notification",
+    "header_login"],
  }
 
  export const HeaderSubscribe = Template.bind({});
@@ -52,4 +57,29 @@ export default {
     children: 'Напишите нам',
     type:'button',
     classN:'footer_third_button',
+ }
+
+ export const FooterSocialsButton = Template.bind({});
+ FooterSocialsButton.args = {
+    children:  [
+    <img src="https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/social_vkontakte.svg" alt="" />
+  ],
+    type:'button',
+    classN:'second_content',
+ }
+
+ export const HeaderNotification = Template.bind({});
+ HeaderNotification.args = {
+    children:  [<FontAwesomeIcon icon={faBell} />
+  ],
+    type:'button',
+    classN:'header_notification',
+ }
+
+ export const HeaderLogin = Template.bind({});
+ HeaderLogin.args = {
+    children:  [<FontAwesomeIcon icon={faUser} />
+  ],
+    type:'button',
+    classN:'header_login',
  }

@@ -4,6 +4,8 @@ import { useLocale } from "../hooks/useLocale";
 import Link from "next/link";
 import LocaleSwitcher from "./LocaleSwitcher";
 import Button from "./reusedСomponents/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const translation = useLocale();
@@ -30,16 +32,23 @@ const Header = () => {
           </div>
           <div className={styles.header_content_second}>
             <LocaleSwitcher></LocaleSwitcher>
-            <Button classN='header_subscribe' type='button' children={translation.header_subscribe}/>
+            <Button
+              classN="header_subscribe"
+              type="button"
+              children={translation.header_subscribe}
+            />
             {/* <button>Смотреть 30 дней за 1 ₽</button> */}
-            <img
-              src="https://icones.pro/wp-content/uploads/2022/02/icone-de-cloche-grise.png"
-              alt=""
+            <Button
+              classN="header_notification"
+              type="button"
+              children={<FontAwesomeIcon icon={faBell} />}
             />
-            <img
-              src="https://romanroadtrust.co.uk/wp-content/uploads/2018/01/profile-icon-png-898.png"
-              alt=""
+            <Button
+              classN="header_login"
+              type="button"
+              children={<FontAwesomeIcon icon={faUser} />}
             />
+           
           </div>
         </div>
       </div>
