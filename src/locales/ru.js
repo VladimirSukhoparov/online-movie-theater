@@ -108,4 +108,5 @@ export const ru = {
         },
     ],
     of_the_week: "за неделю",
+    show_selection: "Показать подборку",
 };
