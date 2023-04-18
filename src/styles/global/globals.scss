@@ -1,4 +1,5 @@
 @import "normalize";
+@import './colors.scss';
 
 * {
   box-sizing: border-box;
@@ -8,9 +9,14 @@
 
 html,
 body {
-  max-width: 1240px;
+  min-width: 320px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  background-color: #100e19;
+  padding: 0;
+
+  background-color: $color-black-background;
   font-family: "Roboto", sans-serif;
 
   overflow-x: hidden;

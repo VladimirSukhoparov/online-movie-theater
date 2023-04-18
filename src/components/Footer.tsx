@@ -66,7 +66,7 @@ const Footer = () => {
             <ul>
               {translation.footer_second_ul.map((el) => {
                 return (
-                  <li>
+                  <li key={el.img}>
                     <img src={el.img} alt="" />
                     <div className={styles.text}>
                       <p>{el.p}</p>
@@ -85,21 +85,26 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.second_content}>
-              <ul>
-                {links.map((el) => {
-                    return (
-                        <li>
-                            <img src={el} alt="" />
-                        </li>
-                    )
-                })}
-              </ul>
+            <ul>
+              {links.map((el) => {
+                return (
+                  <li key={el}>
+                    <Button
+                      classN="second_content"
+                      type="button"
+                      children={<img src={el} alt="" />}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
       <div className={styles.footer_container_mobile}>
         <span>
-           HBO ® and related service marks are the property of Home Box Office, Inc 
+          HBO ® and related service marks are the property of Home Box Office,
+          Inc
         </span>
       </div>
       <div className={styles.footer_mobile}>

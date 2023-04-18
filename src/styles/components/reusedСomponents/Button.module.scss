@@ -1,29 +1,85 @@
+@import "../../global/colors.scss";
 
-$white:#fff;
-
-.footer_third_button{
-    width: 196px;
-    height: 40px;
-    font-weight: 500;
-    font-size: 15px;
-    background-color: #1f1b2e;
-    border: none;
-    color: $white;
-    border-radius: 8px;
-    margin-top: 20px;
-    cursor: pointer;
-    &:hover{
-        background-color: #2e2844;
-    }
+.footer_third_button {
+  width: 196px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: $color-black-button;
+  border: none;
+  color: $color-white;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-black-button-hover;
+  }
 }
 
 .header_subscribe {
-    width: 182px;
-    height: 32px;
-    background-color: #ea003d;
-    color: white;
-    border: 0px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
+  width: 182px;
+  height: 32px;
+  background-color: $color-red-button;
+  color: $color-white;
+  border: 0px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.second_content {
+  width: 40px;
+  height: 40px;
+  background-color: $color-black-button;
+  border-radius: 20px;
+  border: 2px solid $color-black-button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  img {
+    width: 16px;
+    height: 16px;
+  }
+  &:hover {
+    background-color: $color-black-button-hover;
+    border-color: $color-black-button-hover;
+  }
+}
+
+.header_notification {
+  width: 36px;
+  background: transparent;
+  border: none;
+  height: 48px;
+  cursor: pointer;
+  margin-right: 12px;
+  svg {
+    color: $color-white-48;
+  }
+  &:hover {
+    svg {
+      color: $color-white;
+    }
+  }
+}
+
+.header_login {
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: 2px solid $color-white-48;
+  border-radius: 8px;
+  cursor: pointer;
+  svg {
+    color: $color-white-48;
+  }
+  &:hover {
+    border-color: $color-white;
+    svg {
+      color: $color-white;
+    }
+  }
 }
