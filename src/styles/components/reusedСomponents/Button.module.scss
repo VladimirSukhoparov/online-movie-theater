@@ -27,6 +27,7 @@
   font-weight: 500;
   cursor: pointer;
   margin-right: 12px;
+  z-index: 2;
 }
 
 .second_content {
@@ -38,7 +39,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   cursor: pointer;
+  
   img {
     width: 16px;
     height: 16px;
@@ -56,6 +59,7 @@
   height: 48px;
   cursor: pointer;
   margin-right: 12px;
+  z-index: 2;
   svg {
     color: $color-white-48;
   }
@@ -73,6 +77,7 @@
   border: 2px solid $color-white-48;
   border-radius: 8px;
   cursor: pointer;
+  z-index: 2;
   svg {
     color: $color-white-48;
   }

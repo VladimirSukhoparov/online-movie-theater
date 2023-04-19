@@ -22,7 +22,7 @@ const Button = (props) => {
 
 export default Button;
 
-Button.propTypes = {
+/* Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node,
   type: PropTypes.oneOf(["button", "reset", "submit"]),
@@ -33,4 +33,4 @@ Button.propTypes = {
     "header_notification",
     "header_login",
   ]),
-};
+}; */
