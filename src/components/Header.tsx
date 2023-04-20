@@ -10,24 +10,53 @@ import HeaderBody from "./reusedСomponents/HeaderBody";
 
 import cn from "classnames";
 import classes from "../styles/components/header/Header.module.scss";
+import HeaderBodyFilter from "./reusedСomponents/HeaderBodyFilter";
 
 const Header = () => {
   const translation = useLocale();
   const [isHovered, setIsHovered] = useState("");
-  const [propChildren, setPropChildren] = useState(null)
-  const [headerBlock, setHeaderBlock] = useState('')
- 
+  const [propChildren, setPropChildren] = useState(null);
+  const [headerBlock, setHeaderBlock] = useState("");
 
   const visibleNotification = () => {
-   !isHovered && setIsHovered("header__visible");
-   setHeaderBlock('notification')
-    setPropChildren(<><FontAwesomeIcon icon={faBell} /><p>{translation.header_notification}</p></>)
+    isHovered !== "header__visible" && setIsHovered("header__visible");
+    setHeaderBlock("notification");
+    setPropChildren(
+      <>
+        <FontAwesomeIcon icon={faBell} />
+        <p>{translation.header_notification}</p>
+      </>
+    );
   };
 
   const visibleLogin = () => {
-    !isHovered && setIsHovered("header__visible");
-    setHeaderBlock('login')
-    setPropChildren(null)
+    setIsHovered("header__visible");
+    setHeaderBlock("login");
+    setPropChildren(null);
+  };
+
+  const visibleMovies = () => {
+    setIsHovered("header__visible");
+    setHeaderBlock("movies");
+    setPropChildren(<HeaderBodyFilter />);
+  };
+
+  const visibleSeries = () => {
+    setIsHovered("header__visible");
+    setHeaderBlock("series");
+    setPropChildren(<HeaderBodyFilter />);
+  };
+
+  const visibleCartoons = () => {
+    setIsHovered("header__visible");
+    setHeaderBlock("cartoons");
+    setPropChildren(<HeaderBodyFilter />);
+  };
+
+  const visibleTV = () => {
+    setIsHovered("header__visible");
+    setHeaderBlock("tv");
+    setPropChildren(null);
   };
 
   const hideBlock = () => {
@@ -36,8 +65,7 @@ const Header = () => {
 
   const mainCn = cn(
     classes.header__notVisible,
-    isHovered === "header__visible" && classes.header__visible,
-  
+    isHovered === "header__visible" && classes.header__visible
   );
   return (
     <>
@@ -45,18 +73,48 @@ const Header = () => {
         <div className={styles.header_body}>
           <div className={styles.header_content}>
             <div className={styles.header_content_first}>
-              <img className={styles.header__logo}
+              <img
+                className={styles.header__logo}
                 src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
                 alt="IVI"
               />
               <nav>
                 <ul>
                   {translation.header.map((el) => {
-                    return (
-                      <Link href={el.path} key={translation.header.indexOf(el)}>
-                        <li>{el.text}</li>
-                      </Link>
-                    );
+                    if (el.text === "Фильмы" || el.text === "Movies") {
+                      return (
+                        <li key={el.text} onMouseOver={visibleMovies}>
+                          <Link href={el.path}>{el.text}</Link>
+                        </li>
+                      );
+                    } else if (el.text === "Сериалы" || el.text === "Series") {
+                      return (
+                        <li key={el.text} onMouseOver={visibleSeries}>
+                          <Link href={el.path}>{el.text}</Link>
+                        </li>
+                      );
+                    } else if (
+                      el.text === "Мультфильмы" ||
+                      el.text === "Cartoons"
+                    ) {
+                      return (
+                        <li key={el.text} onMouseOver={visibleCartoons}>
+                          <Link href={el.path}>{el.text}</Link>
+                        </li>
+                      );
+                    } else if (el.text === "TV+" || el.text === "TV+") {
+                      return (
+                        <li key={el.text} onMouseOver={visibleTV}>
+                          <Link href={el.path}>{el.text}</Link>
+                        </li>
+                      );
+                    } else {
+                      return (
+                        <li key={el.text}>
+                          <Link href={el.path}>{el.text}</Link>
+                        </li>
+                      );
+                    }
                   })}
                 </ul>
               </nav>
@@ -68,15 +126,14 @@ const Header = () => {
                 type="button"
                 children={translation.header_subscribe}
               />
-              {/* <button>Смотреть 30 дней за 1 ₽</button> */}
-              <div  onMouseOver={visibleNotification} >
+              <div onMouseOver={visibleNotification}>
                 <Button
                   classN="header_notification"
                   type="button"
                   children={<FontAwesomeIcon icon={faBell} />}
                 />
               </div>
-              <div  onMouseOver={visibleLogin}>
+              <div onMouseOver={visibleLogin}>
                 <Button
                   classN="header_login"
                   type="button"
@@ -86,13 +143,10 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className={mainCn} >
-        <hr />
-        <div onMouseOut={hideBlock}>
-        <HeaderBody
-          classN={headerBlock}
-          children={propChildren}
-          />
+        <div className={mainCn}>
+          <div onMouseOut={hideBlock} className={styles.header__block}>
+            <hr className={styles.header__line} />
+            <HeaderBody classN={headerBlock} children={propChildren} />
           </div>
         </div>
       </div>

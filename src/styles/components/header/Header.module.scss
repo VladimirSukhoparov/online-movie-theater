@@ -30,14 +30,14 @@
           margin-left: 32px;
           ul {
             display: flex;
-            a {
+            li {
               margin-right: 16px;
               z-index: 2;
             }
-            a:hover {
+            li:hover {
               color: white;
             }
-            a:last-child {
+            li:last-child {
               margin-right: 0px;
             }
           }
@@ -48,10 +48,10 @@
         align-items: center;
         height: 100%;
         a,
-        button, div {
+        button,
+        div {
           z-index: 2;
         }
-       
       }
     }
   }
@@ -74,24 +74,28 @@
     width: 100%;
     will-change: transform, height;
     z-index: -2;
-    hr {
-      width: 100%;
-      border-color: $color-black-button;
-      position: absolute;
-      left: 0;
-      top: 72px;
-      z-index: 1;
-    }
+  }
+  .header__line {
+    width: 100%;
+    border: 0.5px solid $color-white-48;
+    position: absolute;
+    left: 0;
+    top: 72px;
+    z-index: -1;
+  }
+  .header__block {
+    height: 460px;
+    min-height: 350px;
   }
   .header__visible {
     opacity: 1;
     overflow: hidden;
     transform: translateY(4px);
     visibility: visible;
+    height: 460px;
     min-height: 350px;
     z-index: 1;
   }
-
 }
 
 @media (max-width: 1160px) {
