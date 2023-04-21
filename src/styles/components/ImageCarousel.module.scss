@@ -1,10 +1,60 @@
 @import "../global/colors.scss";
 
-.container {
+.single {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    &__gallery {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        width: 100vw;
+    }
+    &__item {
+        transition-duration: 0.4s;
+        mask-image: linear-gradient(
+            rgba(31, 27, 46, 0.72),
+            rgba(31, 27, 46, 0.72)
+        );
+        &_active {
+            mask-image: none;
+        }
+    }
+    &__arrow {
+        position: absolute;
+        top: calc(50% - 16px);
+        z-index: 2;
+
+        &_right {
+            right: calc((100vw - 1216px) / 2 - 16px * 3);
+        }
+        &_left {
+            left: calc((100vw - 1216px) / 2 - 16px * 3);
+        }
+    }
+}
+
+.multiple {
     display: inline-flex;
     width: 100%;
     flex-direction: row;
     align-items: stretch;
+    &__gallery {
+        max-width: 1216px;
+        overflow: hidden;
+        padding-top: 12px;
+        @media (max-width: 1279px) {
+            width: 100%;
+        }
+        & ul {
+            width: 9999px;
+            transition-duration: 1s;
+            & li {
+                display: inline-block;
+                margin-right: 24px;
+            }
+        }
+    }
 }
 
 .replacement {
@@ -24,23 +74,6 @@
         transition-duration: 0.4s;
         &:hover {
             color: $color-white;
-        }
-    }
-}
-
-.gallery {
-    max-width: 1216px;
-    overflow: hidden;
-    padding-top: 12px;
-    @media (max-width: 1279px) {
-        width: 100%;
-    }
-    & ul {
-        width: 9999px;
-        transition-duration: 1s;
-        & li {
-            display: inline-block;
-            margin-right: 24px;
         }
     }
 }
