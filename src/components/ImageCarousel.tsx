@@ -20,30 +20,78 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ items, oneItemMod }) => {
 };
 
 const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
-    const gallery = useRef(null);
-    const itemWidth = 1216;
     const ITEM_GAP = 16;
     const TRANSITION_DURATION = "0.6s";
+    const START_ITEM = 2;
+
+    const gallery = useRef(null);
+    const clickingAreaLeft = useRef(null);
+    const clickingAreaRight = useRef(null);
+    const arrowLeft = useRef(null);
+    const arrowRight = useRef(null);
+    const lis = useRef([]);
+    const dimmers = useRef([]);
+
     const [galleryWidth, setGalleryWidth] = useState(0);
+    const [galleryHeight, setGalleryHeight] = useState(0);
+    const [itemWidth, setItemWidth] = useState(0);
     const [itemsCopy, setItemsCopy] = useState([...items]);
     const [isClickAllowed, setIsClickAllowed] = useState(true);
     const [position, setPosition] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
-    3;
     const [toRight, setToRight] = useState(false);
     const [toLeft, setToLeft] = useState(false);
 
     useEffect(() => {
-        const width = gallery.current.offsetWidth;
-        setGalleryWidth(width);
-        setPosition((width - itemWidth) / 2 - itemWidth - ITEM_GAP);
-        const newItems = [...itemsCopy];
-        const lastItem = newItems.pop();
-        setItemsCopy([lastItem, ...newItems]);
+        setGalleryWidth(gallery.current.offsetWidth);
+        setGalleryHeight(gallery.current.offsetHeight);
+        setItemWidth(lis.current[0].offsetWidth);
+        dimmers.current[START_ITEM].style.opacity = "0";
+        prepareItems();
     }, []);
+
+    useEffect(() => {
+        setPosition(
+            (galleryWidth - itemWidth) / 2 -
+                START_ITEM * itemWidth -
+                START_ITEM * ITEM_GAP
+        );
+        prepareClickingAreas();
+    }, [galleryWidth]);
+
     useEffect(() => {
         gallery.current.style.transform = `translateX(${position}px)`;
     }, [position]);
+
+    useEffect(() => {
+        if (toRight) {
+            dimmers.current[START_ITEM + 1].style.opacity = "0.5";
+            dimmers.current[START_ITEM].style.opacity = "0";
+            setToRight(false);
+        }
+        if (toLeft) {
+            dimmers.current[START_ITEM - 1].style.opacity = "0.5";
+            dimmers.current[START_ITEM].style.opacity = "0";
+            setToLeft(false);
+        }
+    }, [itemsCopy]);
+
+    const prepareClickingAreas = () => {
+        clickingAreaLeft.current.style.width =
+            (galleryWidth - itemWidth) / 2 - ITEM_GAP + "px";
+        clickingAreaLeft.current.style.height = galleryHeight + "px";
+        clickingAreaRight.current.style.width =
+            (galleryWidth - itemWidth) / 2 - ITEM_GAP + "px";
+        clickingAreaRight.current.style.height = galleryHeight + "px";
+    };
+
+    const prepareItems = () => {
+        const newItems = [...itemsCopy];
+        newItems.unshift(newItems.pop());
+        newItems.unshift(newItems.pop());
+        setItemsCopy([...newItems]);
+    };
+
     const onRightClick = () => {
         if (isClickAllowed) {
             setIsClickAllowed(false);
@@ -55,8 +103,11 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
             } else {
                 setCurrentIndex(currentIndex + 1);
             }
+            dimmers.current[START_ITEM + 1].style.opacity = "0";
+            dimmers.current[START_ITEM].style.opacity = "0.5";
         }
     };
+
     const onLeftClick = () => {
         if (isClickAllowed) {
             setIsClickAllowed(false);
@@ -68,24 +119,26 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
             } else {
                 setCurrentIndex(currentIndex - 1);
             }
+            dimmers.current[START_ITEM - 1].style.opacity = "0";
+            dimmers.current[START_ITEM].style.opacity = "0.5";
         }
     };
+
     const onTransitionEnd = () => {
         setIsClickAllowed(true);
         if (gallery.current.style.transitionDuration === TRANSITION_DURATION) {
             gallery.current.style.transitionDuration = "0s";
             if (toRight) {
                 setItemsCopy(getItemsMovedToRight());
-                setToRight(false);
                 setPosition(position + itemWidth + ITEM_GAP);
             }
             if (toLeft) {
                 setItemsCopy(getItemsMovedToLeft());
-                setToLeft(false);
                 setPosition(position - itemWidth - ITEM_GAP);
             }
         }
     };
+
     const getItemsMovedToRight = () => {
         const newItems = [...itemsCopy];
         const startItem = newItems[0];
@@ -96,6 +149,7 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
         newItems.push(startItem);
         return newItems;
     };
+
     const getItemsMovedToLeft = () => {
         const newItems = [...itemsCopy];
         const endItem = newItems[newItems.length - 1];
@@ -106,20 +160,40 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
         newItems.unshift(endItem);
         return newItems;
     };
+
     return (
         <div className={styles.single}>
             <div
                 className={[
-                    styles.arrow,
-                    styles["single__arrow"],
-                    styles["single__arrow_left"],
+                    styles["single__area"],
+                    styles["single__area_left"],
                 ].join(" ")}
+                ref={clickingAreaLeft}
                 onClick={onLeftClick}
+                onMouseEnter={() => {
+                    arrowLeft.current.classList.add(
+                        styles["arrow__icon_hover"]
+                    );
+                }}
+                onMouseLeave={() => {
+                    arrowLeft.current.classList.remove(
+                        styles["arrow__icon_hover"]
+                    );
+                }}
             >
-                <FontAwesomeIcon
-                    icon={faChevronLeft}
-                    className={styles.arrow__icon}
-                />
+                <div
+                    className={[
+                        styles.arrow,
+                        styles["single__arrow"],
+                        styles["single__arrow_left"],
+                    ].join(" ")}
+                >
+                    <FontAwesomeIcon
+                        icon={faChevronLeft}
+                        className={styles.arrow__icon}
+                        ref={arrowLeft}
+                    />
+                </div>
             </div>
             <ul
                 className={styles["single__gallery"]}
@@ -127,29 +201,46 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
                 onTransitionEnd={onTransitionEnd}
             >
                 {itemsCopy.map((item, index) => (
-                    <li
-                        key={index}
-                        className={[
-                            styles["single__item"],
-                            index === 1 ? styles["single__item_active"] : null,
-                        ].join(" ")}
-                    >
+                    <li key={index} ref={(el) => (lis.current[index] = el)}>
+                        <div
+                            className={styles["single__dimmer"]}
+                            ref={(el) => (dimmers.current[index] = el)}
+                        ></div>
                         {item}
                     </li>
                 ))}
             </ul>
             <div
                 className={[
-                    styles.arrow,
-                    styles["single__arrow"],
-                    styles["single__arrow_right"],
+                    styles["single__area"],
+                    styles["single__area_right"],
                 ].join(" ")}
+                ref={clickingAreaRight}
                 onClick={onRightClick}
+                onMouseEnter={() => {
+                    arrowRight.current.classList.add(
+                        styles["arrow__icon_hover"]
+                    );
+                }}
+                onMouseLeave={() => {
+                    arrowRight.current.classList.remove(
+                        styles["arrow__icon_hover"]
+                    );
+                }}
             >
-                <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className={styles.arrow__icon}
-                />
+                <div
+                    className={[
+                        styles.arrow,
+                        styles["single__arrow"],
+                        styles["single__arrow_right"],
+                    ].join(" ")}
+                >
+                    <FontAwesomeIcon
+                        icon={faChevronRight}
+                        className={styles.arrow__icon}
+                        ref={arrowRight}
+                    />
+                </div>
             </div>
         </div>
     );
@@ -195,7 +286,7 @@ const MultipleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
     return (
         <div className={styles["multiple"]}>
             {position === 0 ? (
-                <div className={styles.replacement}></div>
+                <div className={styles["multiple__replacement"]}></div>
             ) : (
                 <div className={styles.arrow} onClick={onLeftClick}>
                     <FontAwesomeIcon
@@ -214,7 +305,7 @@ const MultipleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
                 </ul>
             </div>
             {position === -maxWidth ? (
-                <div className={styles.replacement}></div>
+                <div className={styles["multiple__replacement"]}></div>
             ) : (
                 <div className={styles.arrow} onClick={onRightClick}>
                     <FontAwesomeIcon
