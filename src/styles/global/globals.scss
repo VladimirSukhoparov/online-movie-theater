@@ -10,16 +10,13 @@
 html,
 body {
   min-width: 320px;
-  min-width: 320px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   padding: 0;
-
   background-color: $color-black-background;
   font-family: "Roboto", sans-serif;
 
-  overflow-x: hidden;
 }
 
 ul,
