@@ -84,7 +84,7 @@ const Header = () => {
                     if (el.text === "Фильмы" || el.text === "Movies") {
                       return (
                         <li key={el.text} onMouseOver={visibleMovies}>
-                          <Link href={el.path}>{el.text}</Link>
+                          <Link href={'/movies'}>{el.text}</Link>
                         </li>
                       );
                     } else if (el.text === "Сериалы" || el.text === "Series") {
