@@ -15,7 +15,7 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <ImageCarousel
-                oneItemMod
+                promoMod
                 items={promojson.map((item) => (
                     <PromoCard
                         image={item.image}

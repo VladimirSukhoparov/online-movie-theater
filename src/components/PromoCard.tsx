@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import styles from "../styles/components/PromoCard.module.scss";
 import Button from "./reusedСomponents/Button";
 import { useLocale } from "../hooks/useLocale";
@@ -15,16 +15,23 @@ interface PromoCardProps {
 }
 
 const PromoCard: FC<PromoCardProps> = ({ image, title, synopsis }) => {
-    const transltion = useLocale();
+    const translation = useLocale();
+    const [width, setWidth] = useState(0);
+    const MOBILE_BREAKPOINT = 599;
+    useEffect(() => {
+        setWidth(window.innerWidth);
+    }, []);
     return (
         <div className={styles.container}>
             <img className={styles.image} src={image.src} alt={image.alt} />
             <div className={styles.description}>
                 <div className={styles.title}>{title}</div>
                 <div className={styles.synopsis}>{synopsis}</div>
-                <Button classN="header_subscribe">
-                    {transltion.show_selection}
-                </Button>
+                {width <= MOBILE_BREAKPOINT ? null : (
+                    <Button classN="header_subscribe">
+                        {translation.show_selection}
+                    </Button>
+                )}
             </div>
         </div>
     );

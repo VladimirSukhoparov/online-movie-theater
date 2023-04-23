@@ -8,11 +8,11 @@ import styles from "../styles/components/ImageCarousel.module.scss";
 
 interface ImageCarouselProps {
     items: JSX.Element[];
-    oneItemMod?: boolean;
+    promoMod?: boolean;
 }
 
-const ImageCarousel: FC<ImageCarouselProps> = ({ items, oneItemMod }) => {
-    return oneItemMod ? (
+const ImageCarousel: FC<ImageCarouselProps> = ({ items, promoMod }) => {
+    return promoMod ? (
         <SingleItemCarousel items={items} />
     ) : (
         <MultipleItemCarousel items={items} />
@@ -30,7 +30,6 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
     const arrowLeft = useRef(null);
     const arrowRight = useRef(null);
     const lis = useRef([]);
-    const dimmers = useRef([]);
 
     const [galleryWidth, setGalleryWidth] = useState(0);
     const [galleryHeight, setGalleryHeight] = useState(0);
@@ -46,7 +45,7 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
         setGalleryWidth(gallery.current.offsetWidth);
         setGalleryHeight(gallery.current.offsetHeight);
         setItemWidth(lis.current[0].offsetWidth);
-        dimmers.current[START_ITEM].style.opacity = "0";
+        lis.current[START_ITEM].classList.add(styles["s-carousel__item_light"]);
         prepareItems();
     }, []);
 
@@ -65,13 +64,21 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
 
     useEffect(() => {
         if (toRight) {
-            dimmers.current[START_ITEM + 1].style.opacity = "0.5";
-            dimmers.current[START_ITEM].style.opacity = "0";
+            lis.current[START_ITEM + 1].classList.remove(
+                styles["s-carousel__item_light"]
+            );
+            lis.current[START_ITEM].classList.add(
+                styles["s-carousel__item_light"]
+            );
             setToRight(false);
         }
         if (toLeft) {
-            dimmers.current[START_ITEM - 1].style.opacity = "0.5";
-            dimmers.current[START_ITEM].style.opacity = "0";
+            lis.current[START_ITEM - 1].classList.remove(
+                styles["s-carousel__item_light"]
+            );
+            lis.current[START_ITEM].classList.add(
+                styles["s-carousel__item_light"]
+            );
             setToLeft(false);
         }
     }, [itemsCopy]);
@@ -103,8 +110,12 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
             } else {
                 setCurrentIndex(currentIndex + 1);
             }
-            dimmers.current[START_ITEM + 1].style.opacity = "0";
-            dimmers.current[START_ITEM].style.opacity = "0.5";
+            lis.current[START_ITEM + 1].classList.add(
+                styles["s-carousel__item_light"]
+            );
+            lis.current[START_ITEM].classList.remove(
+                styles["s-carousel__item_light"]
+            );
         }
     };
 
@@ -119,8 +130,12 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
             } else {
                 setCurrentIndex(currentIndex - 1);
             }
-            dimmers.current[START_ITEM - 1].style.opacity = "0";
-            dimmers.current[START_ITEM].style.opacity = "0.5";
+            lis.current[START_ITEM - 1].classList.add(
+                styles["s-carousel__item_light"]
+            );
+            lis.current[START_ITEM].classList.remove(
+                styles["s-carousel__item_light"]
+            );
         }
     };
 
@@ -162,17 +177,27 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
     };
 
     return (
-        <div className={styles.single}>
+        <div className={styles["s-carousel"]}>
             <div
                 className={[
-                    styles["single__area"],
-                    styles["single__area_left"],
+                    styles["s-carousel__area"],
+                    styles["s-carousel__area_left"],
                 ].join(" ")}
                 ref={clickingAreaLeft}
                 onClick={onLeftClick}
                 onMouseEnter={() => {
                     arrowLeft.current.classList.add(
                         styles["arrow__icon_hover"]
+                    );
+                }}
+                onMouseDown={() => {
+                    arrowLeft.current.classList.add(
+                        styles["arrow__icon_active"]
+                    );
+                }}
+                onMouseUp={() => {
+                    arrowLeft.current.classList.remove(
+                        styles["arrow__icon_active"]
                     );
                 }}
                 onMouseLeave={() => {
@@ -184,8 +209,8 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
                 <div
                     className={[
                         styles.arrow,
-                        styles["single__arrow"],
-                        styles["single__arrow_left"],
+                        styles["s-carousel__arrow"],
+                        styles["s-carousel__arrow_left"],
                     ].join(" ")}
                 >
                     <FontAwesomeIcon
@@ -196,30 +221,40 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
                 </div>
             </div>
             <ul
-                className={styles["single__gallery"]}
+                className={styles["s-carousel__gallery"]}
                 ref={gallery}
                 onTransitionEnd={onTransitionEnd}
             >
                 {itemsCopy.map((item, index) => (
-                    <li key={index} ref={(el) => (lis.current[index] = el)}>
-                        <div
-                            className={styles["single__dimmer"]}
-                            ref={(el) => (dimmers.current[index] = el)}
-                        ></div>
+                    <li
+                        key={index}
+                        ref={(el) => (lis.current[index] = el)}
+                        className={styles["s-carousel__item"]}
+                    >
                         {item}
                     </li>
                 ))}
             </ul>
             <div
                 className={[
-                    styles["single__area"],
-                    styles["single__area_right"],
+                    styles["s-carousel__area"],
+                    styles["s-carousel__area_right"],
                 ].join(" ")}
                 ref={clickingAreaRight}
                 onClick={onRightClick}
                 onMouseEnter={() => {
                     arrowRight.current.classList.add(
                         styles["arrow__icon_hover"]
+                    );
+                }}
+                onMouseDown={() => {
+                    arrowRight.current.classList.add(
+                        styles["arrow__icon_active"]
+                    );
+                }}
+                onMouseUp={() => {
+                    arrowRight.current.classList.remove(
+                        styles["arrow__icon_active"]
                     );
                 }}
                 onMouseLeave={() => {
@@ -231,8 +266,8 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
                 <div
                     className={[
                         styles.arrow,
-                        styles["single__arrow"],
-                        styles["single__arrow_right"],
+                        styles["s-carousel__arrow"],
+                        styles["s-carousel__arrow_right"],
                     ].join(" ")}
                 >
                     <FontAwesomeIcon
@@ -284,9 +319,9 @@ const MultipleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
     };
 
     return (
-        <div className={styles["multiple"]}>
+        <div className={styles["m-carousel"]}>
             {position === 0 ? (
-                <div className={styles["multiple__replacement"]}></div>
+                <div className={styles["m-carousel__replacement"]}></div>
             ) : (
                 <div className={styles.arrow} onClick={onLeftClick}>
                     <FontAwesomeIcon
@@ -295,7 +330,7 @@ const MultipleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
                     />
                 </div>
             )}
-            <div className={styles["multiple__gallery"]} ref={gallery}>
+            <div className={styles["m-carousel__gallery"]} ref={gallery}>
                 <ul ref={ul}>
                     {items.map((item, index) => (
                         <li key={index} ref={li}>
@@ -305,7 +340,7 @@ const MultipleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
                 </ul>
             </div>
             {position === -maxWidth ? (
-                <div className={styles["multiple__replacement"]}></div>
+                <div className={styles["m-carousel__replacement"]}></div>
             ) : (
                 <div className={styles.arrow} onClick={onRightClick}>
                     <FontAwesomeIcon
