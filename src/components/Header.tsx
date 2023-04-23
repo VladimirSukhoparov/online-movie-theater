@@ -6,11 +6,11 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import Button from "./reusedСomponents/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
-import HeaderBody from "./reusedСomponents/HeaderBody";
+import HeaderBody from "./headerComponents/HeaderBody";
 
 import cn from "classnames";
 import classes from "../styles/components/header/Header.module.scss";
-import HeaderBodyFilter from "./reusedСomponents/HeaderBodyFilter";
+import HeaderBodyFilter from "./headerComponents/HeaderBodyFilter";
 
 const Header = () => {
   const translation = useLocale();

@@ -7,7 +7,7 @@
     padding: 0 12px;
   }
   &_player {
-    width: 60%;
+    width: 63%;
     position: sticky;
     position: -webkit-sticky;
     top: 32px;
@@ -16,22 +16,22 @@
     padding-right: 32px;
   }
   &_info {
-    width: 40%;
+    width: 37%;
     display: inline-block;
     position: relative;
     color: $color-white;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
   }
   &_movie {
     width: 100%;
-    padding: 0 12px;
     margin-bottom: 25px;
+    padding-right: 12px;
   }
   &_user_btn {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 12px;
+    padding-right: 12px;
     cursor: pointer;
   }
 
@@ -146,7 +146,7 @@
       color: $color-white-72;
     }
     &_show {
-        display:block;
+      display: block;
 
       position: relative;
       cursor: pointer;
@@ -161,78 +161,122 @@
       }
     }
     &_hide {
-        display:none;
-        position: relative;
-        cursor: pointer;
-        font-size: 15px;
-        line-height: 22px;
-        font-weight: 400;
-        font-style: normal;
-        color: $color-white-48;
-        transition-duration: 0.4s;
-        &:hover {
-          color: $color-white;
-        }
+      display: none;
+      position: relative;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 400;
+      font-style: normal;
+      color: $color-white-48;
+      transition-duration: 0.4s;
+      &:hover {
+        color: $color-white;
       }
-      &_box{
-        margin-top: 32px;
-      }
-    ul{
-        margin-bottom:32px;
-        margin-top:8px;
     }
-      &_item{
-        color: $color-white-80;
-        font-size: 15px;
-        line-height: 20px;
-        font-weight: 400;
-        font-style: normal;
-        display: inline-block;
-        vertical-align: top;
-        &:not(:last-child){
-            margin-right:8px;
-        }
-        p {
-          color: $color-white;
-          font-size: 13px;
-          line-height: 16px;
-          font-weight: 500;
-          background-color: $color-white-16;
-          height: 20px;
-          padding: 2px 6px;
-          box-sizing: border-box;
-          border-radius: 4px;
-          position: relative;
-        }
+    &_box {
+      margin-top: 32px;
+    }
+    ul {
+      margin-bottom: 32px;
+      margin-top: 8px;
+    }
+    &_item {
+      color: $color-white-80;
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 400;
+      font-style: normal;
+      display: inline-block;
+      vertical-align: top;
+      &:not(:last-child) {
+        margin-right: 8px;
       }
-      hr{
-        border-color:$color-white-08;
-        margin-bottom: 16px;
+      p {
+        color: $color-white;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 500;
+        background-color: $color-white-16;
+        height: 20px;
+        padding: 2px 6px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        position: relative;
       }
-      &_boxTitle{
-        margin-bottom: 4px;
-      }
-      &_boxText{
-        margin-bottom: 16px;
-        color:$color-white;
-      }
-      &_boxTitle2{
-        display:inline;
-      }
-      &_boxText2{
-        color:$color-white-40;
-      }
+    }
+    hr {
+      border-color: $color-white-08;
+      margin-bottom: 16px;
+    }
+    &_boxTitle {
+      margin-bottom: 4px;
+    }
+    &_boxText {
+      margin-bottom: 16px;
+      color: $color-white;
+    }
+    &_boxTitle2 {
+      display: inline;
+    }
+    &_boxText2 {
+      color: $color-white-40;
+    }
   }
-  &_rating{
-    width:100%;
-    margin:0 12px;
-    padding:10px;
-    background-color:$color-white-08;
+  &_rating {
+    width: 100%;
+    padding: 0 12px;
+    
+    
+    
+    &_box{
+        background-color: $color-white-08;
+    border-radius: 12px;
+    padding: 10px;
     display: flex;
     align-items: center;
-    border-radius: 12px;
     cursor: pointer;
-    
+    }
+    &_boxNum {
+      width: 64px;
+      height: 64px;
+      background-color: #73a32f;
+      color:$color-white ;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 700;
+      font-style: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-right: 16px;
+    }
+&_boxTitle{
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    font-style: normal;
+    color: $color-white;
+}
+&_boxCaption{
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    font-style: normal;
+    color: $color-white-72;
+    margin-top: 0;
+}
+&_boxCounter{
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 4px;
+    font-weight: 400;
+    font-style: normal;
+    color: $color-white-72;
+}
   }
-
 }

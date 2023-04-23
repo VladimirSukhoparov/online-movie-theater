@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/components/reusedСomponents/HeaderBodyFilter.module.scss";
+import styles from "../../styles/components/headerComponents/HeaderBodyFilter.module.scss";
 
 const HeaderBodyFilter = () => {
   return (
