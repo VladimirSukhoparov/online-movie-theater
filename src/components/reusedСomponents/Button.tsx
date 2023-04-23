@@ -14,6 +14,10 @@ const Button = (props) => {
     props.classN === "trailer" && classes.trailer,
     props.classN === "bookmark" && classes.bookmark,
     props.classN === "share" && classes.share,
+    props.classN === "rating" && classes.rating,
+    props.classN === "allDevices" && classes.allDevices,
+
+
 
 
 

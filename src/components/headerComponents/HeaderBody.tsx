@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import classes from "../../styles/components/reusedСomponents/HeaderBody.module.scss";
+import classes from "../../styles/components/headerComponents/HeaderBody.module.scss";
 
 const HeaderBody = (props) => {
   const mainCn = cn(
