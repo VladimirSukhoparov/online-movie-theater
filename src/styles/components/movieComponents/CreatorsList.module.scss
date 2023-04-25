@@ -1,14 +1,14 @@
-@import '../../global/colors.scss';
-.creatorsList{
-    width: 100%;
-    margin-bottom: 8px;
+@import "../../global/colors.scss";
+.creatorsList {
+  width: 100%;
+  margin-bottom: 8px;
   padding: 24px 12px;
   position: relative;
   color: $color-white;
   transition-duration: 0.4s;
-  a{
-    &:hover{
-        text-decoration:underline;
+  a {
+    &:hover {
+      text-decoration: underline;
     }
   }
   &_title {
@@ -26,8 +26,10 @@
     text-overflow: ellipsis;
   }
   &_carousel {
-    display: block;
+    display:flex;
     width: 100%;
     padding-top: 12px;
   }
 }
+
+

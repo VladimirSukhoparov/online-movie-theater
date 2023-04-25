@@ -1,0 +1,74 @@
+@import "../../global/colors.scss";
+
+.personCard {
+  margin-bottom: 24px;
+  padding-right: 24px;
+  transition-duration: 0.4s;
+  color: $color-white;
+
+  &:hover &_image {
+    background-color: $color-black-button-hover;
+    span {
+      color: $color-white;
+    }
+  }
+  &:hover &_caption_title {
+    color: $color-white;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &_image {
+    background-color: $color-black-button;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    width: 88px;
+    height: 88px;
+    img {
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 88px;
+      object-fit: cover;
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $color-gray-modal;
+      transition-duration: 0.4s;
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 500;
+      font-style: normal;
+    }
+  }
+  &_caption {
+    display: flex;
+    flex-direction: column;
+    max-width: 88px;
+    overflow: hidden;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-style: normal;
+
+    &_title {
+      font-weight: 500;
+      transition-duration: 0.4s;
+      color: $color-gray-person;
+    }
+    &_subTitle {
+      font-weight: 400;
+      color: $color-gray-modal;
+    }
+  }
+}

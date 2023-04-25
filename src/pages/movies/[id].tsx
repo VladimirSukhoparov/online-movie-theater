@@ -1,20 +1,29 @@
-import React from 'react'
-import styles from '../../styles/pages/[id].module.scss'
-import CardMovie from '../../components/movieComponents/CardMovie'
-import testFilm from '../../../public/data/testFilm.json'
-import RelatedList from '../../components/movieComponents/RelatedList'
-import CreatorsList from '../../components/movieComponents/CreatorsList'
-import AllDevices from '../../components/movieComponents/AllDevices'
+import React from "react";
+import CardMovie from "../../components/movieComponents/CardMovie";
+import film from "../../../public/data/example.json";
+import RelatedList from "../../components/movieComponents/RelatedList";
+import CreatorsList from "../../components/movieComponents/CreatorsList";
+import AllDevices from "../../components/movieComponents/AllDevices";
 
-const Movie = () => {
+import styles from "../../styles/pages/[id].module.scss";
+
+const Movie = ({ id }) => {
   return (
-   <div className={styles.movie}>
-   <CardMovie testFilm={testFilm[0]}/>
-   <RelatedList film = {testFilm[0]} />
-   <CreatorsList />
-   <AllDevices film = {testFilm[0]}/>
-   </div>
-  )
-}
+    <div className={styles.movie}>
+      <CardMovie film={film.id == id && film} />
+      <RelatedList film={film.id == id && film} />
+      <CreatorsList film={film.id == id && film} />
+      <AllDevices film={film.id == id && film} />
+    </div>
+  );
+};
 
-export default Movie
+export default Movie;
+
+export const getServerSideProps = (context) => {
+  return {
+    props: {
+      id: context.query.id,
+    },
+  };
+};

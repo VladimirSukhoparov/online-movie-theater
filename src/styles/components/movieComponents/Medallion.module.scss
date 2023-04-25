@@ -5,17 +5,18 @@
   min-width: 72px;
   max-width: 90px;
   display: flex;
-  flex-direction:column;
-  align-items:center;
+  flex-direction: column;
+  align-items: center;
+  transition-duration: 0.4s;
   &:hover {
-    .medallion_box{
-    background-color: $color-white-24;
-}
-.medallion_title{
-    p{
-        color: $color-white;
+    .medallion_box {
+      background-color: $color-white-24;
     }
-}
+    .medallion_title {
+      p {
+        color: $color-white;
+      }
+    }
   }
   &_box {
     width: 56px;
@@ -28,9 +29,10 @@
     position: relative;
     transition-duration: 0.4s;
     margin-bottom: 8px;
-   
   }
   &_image {
+    position: relative;
+    overflow: hidden;
     width: 44px;
     height: 44px;
     display: flex;
@@ -38,7 +40,16 @@
     justify-content: center;
     border-radius: 8px;
     background-color: #73a32f;
-    position: relative;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
   }
   &_rating {
     position: absolute;
@@ -67,7 +78,6 @@
       text-align: center;
       color: $color-white-48;
       transition-duration: 0.4s;
-
     }
   }
 }
