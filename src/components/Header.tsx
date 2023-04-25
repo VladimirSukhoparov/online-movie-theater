@@ -73,11 +73,13 @@ const Header = () => {
         <div className={styles.header_body}>
           <div className={styles.header_content}>
             <div className={styles.header_content_first}>
+              <Link href={'/'}>
               <img
                 className={styles.header__logo}
                 src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
                 alt="IVI"
               />
+              </Link>
               <nav>
                 <ul>
                   {translation.header.map((el) => {

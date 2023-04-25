@@ -5,7 +5,7 @@ const Error = () => {
   return (
     <div className={styles.error_page}>
     <h1>
-        Error
+       Ooops, page not found
     </h1>
     </div>);
 };
