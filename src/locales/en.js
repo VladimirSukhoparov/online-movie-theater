@@ -29,6 +29,503 @@ export const en = {
       path: "/",
     },
   ],
+  header_links_content: [
+    {
+      genres: [
+        {
+          text: "Arthouse",
+          url: ""
+        },
+        {
+          text: "Biography",
+          url: ""
+        },
+        {
+          text: "Action",
+          url: ""
+        },
+        {
+          text: "Vestern",
+          url: ""
+        },
+        {
+          text: "Military",
+          url: ""
+        },
+        {
+          text: "Detective",
+          url: ""
+        },
+        {
+          text: "For whole family",
+          url: ""
+        },
+        {
+          text: "For childrens",
+          url: ""
+        },
+        {
+          text: "Documentaries",
+          url: ""
+        },
+        {
+          text: "Drama",
+          url: ""
+        },
+        {
+          text: "Historical",
+          url: ""
+        },
+        {
+          text: "Catastrophes",
+          url: ""
+        },
+        {
+          text: "Comedy",
+          url: ""
+        },
+        {
+          text: "Criminal",
+          url: ""
+        },
+        {
+          text: "Melodramas",
+          url: ""
+        },
+        {
+          text: "Mistyc",
+          url: ""
+        },
+        {
+          text: "Adventure",
+          url: ""
+        },
+        {
+          text: "Sport",
+          url: ""
+        },
+        {
+          text: "Thriller",
+          url: ""
+        },
+        {
+          text: "Horror",
+          url: ""
+        },
+        {
+          text: "Fantastic",
+          url: ""
+        },
+        {
+          text: "Fantasy",
+          url: ""
+        },
+      ],
+      countries: [
+        {
+          text: "Russian",
+          url: ""
+        },
+        {
+          text: "Foreign",
+          url: ""
+        },
+        {
+          text: "Soviet movies",
+          url: ""
+        },
+      ],
+      years: [
+        {
+          text: "Movies 2023",
+          url: "",
+        },
+        {
+          text: "Movies 2022",
+          url: "",
+        },
+        {
+          text: "Movies 2021",
+          url: "",
+        },
+        {
+          text: "Movies 2020",
+          url: "",
+        },
+      ],
+      recomandation: [
+        {
+          text: "New"
+        },
+        {
+          text: "Selections"
+        },
+        {
+          text: "Ivi.Rating"
+        },
+        {
+          text: "Soon on Ivi"
+        },
+        {
+          text: "Trailers"
+        },
+        {
+          text: "What to watch"
+        },
+        {
+          text: "Movies in HD"
+        },
+        {
+          text: "Ivi's choose"
+        },
+        {
+          text: "New subscriptions"
+        },
+        {
+          text: "Amediateka movies"
+        },
+        {
+          text: "Popular movies"
+        },
+        {
+          text: "Ivi's movies"
+        },
+      ]
+    },
+    {
+      genres: [
+        {
+          text: "Biography",
+          url: "",
+        },
+        {
+          text: "Action",
+          url: "",
+        },
+        {
+          text: "Military",
+          url: "",
+        },
+        {
+          text: "Detective",
+          url: "",
+        },
+        {
+          text: "For whole family",
+          url: "",
+        },
+        {
+          text: "For childrens",
+          url: "",
+        },
+        {
+          text: "Documentical",
+          url: "",
+        },
+        {
+          text: "Drama",
+          url: "",
+        },
+        {
+          text: "Historical",
+          url: "",
+        },
+        {
+          text: "Comedy",
+          url: "",
+        },
+        {
+          text: "Criminal",
+          url: "",
+        },
+        {
+          text: "Medical",
+          url: "",
+        },
+        {
+          text: "Melodramas",
+          url: "",
+        },
+        {
+          text: "Mistyc",
+          url: "",
+        },
+        {
+          text: "Adventure",
+          url: "",
+        },
+        {
+          text: "Romantic",
+          url: "",
+        },
+        {
+          text: "Thriller",
+          url: "",
+        },
+        {
+          text: "Fantasic",
+          url: "",
+        },
+        {
+          text: "Fantasy",
+          url: "",
+        },
+      ],
+      countries: [
+        {
+          text: "Russian",
+          url: ""
+        },
+        {
+          text: "Foreighn",
+          url: ""
+        },
+        {
+          text: "American",
+          url: ""
+        },
+        {
+          text: "Ukrainian",
+          url: ""
+        },
+        {
+          text: "Korean",
+          url: ""
+        },
+        {
+          text: "Turkish",
+          url: ""
+        },
+      ],
+      years: [
+        {
+          text: "Series 2023",
+          url: "",
+        },
+        {
+          text: "Series 2022",
+          url: "",
+        },
+        {
+          text: "Series 2021",
+          url: "",
+        },
+        {
+          text: "Series 2020",
+          url: "",
+        },
+      ],
+      recomandation: [
+        {
+          text: "New"
+        },
+        {
+          text: "Ivi.Raiting"
+        },
+        {
+          text: "Series in HD"
+        },
+        {
+          text: "Free series"
+        },
+        {
+          text: "Amediateka series"
+        },
+        {
+          text: "Paramount Play series"
+        },
+      ]
+    },
+    {
+      genres: [
+        {
+          text: "Anime",
+          url: ""
+        },
+        {
+          text: "Action",
+          url: ""
+        },
+        {
+          text: "Detecrive",
+          url: ""
+        },
+        {
+          text: "For whole family",
+          url: ""
+        },
+        {
+          text: "For childrens",
+          url: ""
+        },
+        {
+          text: "Historical",
+          url: ""
+        },
+        {
+          text: "Comedy",
+          url: ""
+        },
+        {
+          text: "Musical",
+          url: ""
+        },
+        {
+          text: "Full-length",
+          url: ""
+        },
+        {
+          text: "Adventure",
+          url: ""
+        },
+        {
+          text: "Developing",
+          url: ""
+        },
+        {
+          text: "Сериалы",
+          url: ""
+        },
+        {
+          text: "Sport",
+          url: ""
+        },
+        {
+          text: "Fantastic",
+          url: ""
+        },
+        {
+          text: "Fantasy",
+          url: ""
+        },
+      ],
+      countries: [
+        {
+          text: "Soviet",
+          url: ""
+        },
+        {
+          text: "Russian",
+          url: ""
+        },
+        {
+          text: "American",
+          url: ""
+        },
+        {
+          text: "Foreign",
+          url: ""
+        },
+      ],
+      years: [
+        {
+          text: "Cartoons 2023",
+          url: "",
+        },
+        {
+          text: "Cartoons 2022",
+          url: "",
+        },
+        {
+          text: "Cartoons 2021",
+          url: "",
+        },
+        {
+          text: "Cartoons 2020",
+          url: "",
+        },
+      ],
+      recomandation: [
+        {
+          text: "New"
+        },
+        {
+          text: "Cartoons in HD"
+        },
+        {
+          text: "Paramount Play / Nickelodeon cartoons"
+        },
+        {
+          text: "DreamWorks cartoons"
+        },
+        {
+          text: "СТС Kids cartoons"
+        },
+      ]
+    },
+    {
+      genres: [
+        {
+          text: "",
+          url: ""
+        }
+      ],
+      countries: [
+        {
+          text: "Русские",
+          url: ""
+        },
+        {
+          text: "Зарубежные",
+          url: ""
+        },
+        {
+          text: "Американские",
+          url: ""
+        },
+        {
+          text: "Украинские",
+          url: ""
+        },
+        {
+          text: "Корейские",
+          url: ""
+        },
+        {
+          text: "Турецкие",
+          url: ""
+        },
+      ],
+      years: [
+        {
+          text: "Сериалы 2023 года",
+          url: "",
+        },
+        {
+          text: "Сериалы 2022 года",
+          url: "",
+        },
+        {
+          text: "Сериалы 2021 года",
+          url: "",
+        },
+        {
+          text: "Сериалы 2020 года",
+          url: "",
+        },
+      ],
+      recomandation: [
+        {
+          text: "Новинки"
+        },
+        {
+          text: "Иви.Рейтинг"
+        },
+        {
+          text: "Сериалы в HD"
+        },
+        {
+          text: "Бесплатные сериалы"
+        },
+        {
+          text: "Сериалы Amediateka"
+        },
+        {
+          text: "Сериалы Paramount Play"
+        },
+      ]
+    }
+  ],
   footer_ul: [
     [
       "About us",

@@ -6,153 +6,290 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import Button from "./reusedСomponents/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
-import HeaderBody from "./headerComponents/HeaderBody";
-
-import cn from "classnames";
-import classes from "../styles/components/header/Header.module.scss";
-import HeaderBodyFilter from "./headerComponents/HeaderBodyFilter";
 
 const Header = () => {
   const translation = useLocale();
-  const [isHovered, setIsHovered] = useState("");
-  const [propChildren, setPropChildren] = useState(null);
-  const [headerBlock, setHeaderBlock] = useState("");
+  const [focus, setFocus] = useState(2);
+  const [sideScroll, setSideScroll] = useState(0);
+  const [sideHover, setSideHover] = useState(0);
 
-  const visibleNotification = () => {
-    isHovered !== "header__visible" && setIsHovered("header__visible");
-    setHeaderBlock("notification");
-    setPropChildren(
-      <>
-        <FontAwesomeIcon icon={faBell} />
-        <p>{translation.header_notification}</p>
-      </>
-    );
+  const scrollImages = [
+    [
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151784"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151684"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151884"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/152884"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151885"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151886"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151887"
+      },
+    ],
+    [
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151888"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151889"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151880"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151814"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151824"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151834"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151844"
+      },
+    ],
+    [
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/121884"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/131884"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/141884"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/161884"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/171884"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/181884"
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
+        url: "watch/151234"
+      },
+    ],
+  ]
+
+  const dpropdownMenu = (num) => {
+    setFocus(num);
+    setSideScroll(0);
+    setSideHover(0)
   };
 
-  const visibleLogin = () => {
-    setIsHovered("header__visible");
-    setHeaderBlock("login");
-    setPropChildren(null);
+  const scroll = (num) => {
+    setSideScroll(num * 27);
+    setSideHover(num)
   };
 
-  const visibleMovies = () => {
-    setIsHovered("header__visible");
-    setHeaderBlock("movies");
-    setPropChildren(<HeaderBodyFilter />);
-  };
-
-  const visibleSeries = () => {
-    setIsHovered("header__visible");
-    setHeaderBlock("series");
-    setPropChildren(<HeaderBodyFilter />);
-  };
-
-  const visibleCartoons = () => {
-    setIsHovered("header__visible");
-    setHeaderBlock("cartoons");
-    setPropChildren(<HeaderBodyFilter />);
-  };
-
-  const visibleTV = () => {
-    setIsHovered("header__visible");
-    setHeaderBlock("tv");
-    setPropChildren(null);
-  };
-
-  const hideBlock = () => {
-    setIsHovered("");
-  };
-
-  const mainCn = cn(
-    classes.header__notVisible,
-    isHovered === "header__visible" && classes.header__visible
-  );
   return (
-    <>
-      <div className={styles.header}>
-        <div className={styles.header_body}>
-          <div className={styles.header_content}>
-            <div className={styles.header_content_first}>
-              <Link href={'/'}>
-              <img
-                className={styles.header__logo}
-                src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
-                alt="IVI"
-              />
+    <div className={styles.header} onMouseLeave={() => dpropdownMenu(0)}>
+      <div
+        className={
+          focus === 0 || focus === 1
+            ? styles.header_body
+            : styles.header_link_container
+        }
+      >
+        <div className={styles.header_content}>
+          <div className={styles.header_content_first}>
+            <img
+              src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
+              alt="IVI"
+            />
+            <nav>
+              <ul>
+                {translation.header.map((el, index) => {
+                  return (
+                    <Link
+                      href={el.path}
+                      key={translation.header.indexOf(el)}
+                      onMouseEnter={() => dpropdownMenu(index)}
+                    >
+                      <li>{el.text}</li>
+                    </Link>
+                  );
+                })}
+              </ul>
+            </nav>
+          </div>
+          <div className={styles.header_content_second}>
+            <LocaleSwitcher></LocaleSwitcher>
+            <Button
+              classN="header_subscribe"
+              type="button"
+              children={translation.header_subscribe}
+            />
+            <Link href="?ivi_search">Поиск</Link>
+            <Button
+              classN="header_notification"
+              type="button"
+              children={<FontAwesomeIcon icon={faBell} />}
+            />
+            <Button
+              classN="header_login"
+              type="button"
+              children={<FontAwesomeIcon icon={faUser} />}
+            />
+          </div>
+        </div>
+        {focus > 1 ? <div className={styles.header_dropdown_container}>
+          <div className={styles.header_dropdown_genres}>
+            <div className={styles.header_title}>
+            {translation.welcome === "добро пожаловать" ? "Жанры" : "Genres"}
+            </div>
+            <ul>
+              {translation.header_links_content[focus - 2].genres.map((el) => {
+                  return (
+                    <li key={el.text}>
+                      {el.text}
+                    </li>
+                  )
+                })}
+            </ul>
+          </div>
+          <div className={styles.header_dropdown_countriesandyears}>
+            <div className={styles.header_country}>
+            <div className={styles.header_title}>
+              {translation.welcome === "добро пожаловать" ? "Страны" : "Countries"}
+              </div>
+              <ul>
+              {translation.header_links_content[focus - 2].countries.map((el) => {
+                  return (
+                    <li key={el.text}>
+                      {el.text}
+                    </li>
+                  )
+                })}
+            </ul>
+            </div>
+            <div className={styles.header_years}>
+            <div className={styles.header_title}>
+            {translation.welcome === "добро пожаловать" ? "Годы" : "Years"}
+            </div>
+            <ul>
+              {translation.header_links_content[focus - 2].years.map((el) => {
+                  return (
+                    <li key={el.text}>
+                      {el.text}
+                    </li>
+                  )
+                })}
+            </ul>
+            </div>
+          </div>
+          <div className={styles.header_dropdown_sidecontent}>
+            <div className={styles.header_sidecontent_recomandation}>
+              <div className={styles.header_recomandation_scroll}>
+                <div className={styles.header_scroll} style={{margin: `${sideScroll}px 0px 0px 0px`}} ></div>
+              </div>
+              <ul>
+                {translation.header_links_content[focus - 2].recomandation.map((el, index) => {
+                  if(sideHover === index) {
+                    return (
+                      <li key={el.text} onMouseEnter={() => scroll(index)} style={{color: "white"}}>
+                        {el.text}
+                      </li>
+                    )
+                  } else {
+                    return (
+                      <li key={el.text} onMouseEnter={() => scroll(index)}>
+                        {el.text}
+                      </li>
+                    )
+                  }
+                })}
+              </ul>
+            </div>
+            <div className={styles.header_sidecontent_subscribe}>
+              <div className={styles.header_subscribe_ivi}>
+                <div className={styles.subscribe_left_fade}>
+                </div>
+                <div className={styles.subscribe_right_fade}>
+                </div>
+                <div className={styles.header_subscribe_posters}>
+                  <div className={styles.posters_container}>
+                  <div className={styles.posters_contant}>
+                    {scrollImages[0].map((el) => {
+                      return (
+                        <img src={el.src} alt="" key={el.url}/>
+                      )
+                    })}
+                  </div>
+                  <div className={styles.posters_contant_second}>
+                    {scrollImages[1].map((el) => {
+                      return (
+                        <img src={el.src} alt="" key={el.url}/>
+                      )
+                    })}
+                  </div>
+                  <div className={styles.posters_contant}>
+                    {scrollImages[2].map((el) => {
+                      return (
+                        <img src={el.src} alt="" key={el.url}/>
+                      )
+                    })}
+                  </div>
+                  </div> 
+                  <div className={styles.posters_button}>
+                    <img src="https://ruvod.com/wp-content/uploads/2022/09/Default.png" alt="" />
+                    <div className={styles.posters_button_text}>
+                    <span>
+                      Подписка Иви
+                    </span>
+                    <p>
+                    От 199 ₽ за месяц
+                    </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <Link href="https://www.ivi.ru/pages/tvsmart/">
+                <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/tv.png"/>
+                Смотреть на SmartTV
               </Link>
-              <nav>
-                <ul>
-                  {translation.header.map((el) => {
-                    if (el.text === "Фильмы" || el.text === "Movies") {
-                      return (
-                        <li key={el.text} onMouseOver={visibleMovies}>
-                          <Link href={'/movies'}>{el.text}</Link>
-                        </li>
-                      );
-                    } else if (el.text === "Сериалы" || el.text === "Series") {
-                      return (
-                        <li key={el.text} onMouseOver={visibleSeries}>
-                          <Link href={el.path}>{el.text}</Link>
-                        </li>
-                      );
-                    } else if (
-                      el.text === "Мультфильмы" ||
-                      el.text === "Cartoons"
-                    ) {
-                      return (
-                        <li key={el.text} onMouseOver={visibleCartoons}>
-                          <Link href={el.path}>{el.text}</Link>
-                        </li>
-                      );
-                    } else if (el.text === "TV+" || el.text === "TV+") {
-                      return (
-                        <li key={el.text} onMouseOver={visibleTV}>
-                          <Link href={el.path}>{el.text}</Link>
-                        </li>
-                      );
-                    } else {
-                      return (
-                        <li key={el.text}>
-                          <Link href={el.path}>{el.text}</Link>
-                        </li>
-                      );
-                    }
-                  })}
-                </ul>
-              </nav>
-            </div>
-            <div className={styles.header_content_second}>
-              <LocaleSwitcher></LocaleSwitcher>
-              <Button
-                classN="header_subscribe"
-                type="button"
-                children={translation.header_subscribe}
-              />
-              <div onMouseOver={visibleNotification}>
-                <Button
-                  classN="header_notification"
-                  type="button"
-                  children={<FontAwesomeIcon icon={faBell} />}
-                />
-              </div>
-              <div onMouseOver={visibleLogin}>
-                <Button
-                  classN="header_login"
-                  type="button"
-                  children={<FontAwesomeIcon icon={faUser} />}
-                />
-              </div>
             </div>
           </div>
         </div>
-        <div className={mainCn}>
-          <div onMouseOut={hideBlock} className={styles.header__block}>
-            <hr className={styles.header__line} />
-            <HeaderBody classN={headerBlock} children={propChildren} />
-          </div>
-        </div>
+        : null 
+        }
       </div>
-    </>
+      </div>
   );
 };
 
