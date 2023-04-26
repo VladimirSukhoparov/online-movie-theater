@@ -101,6 +101,7 @@ const PosterCard: FC<PosterCardProps> = ({
                                     {charts.map((value) => (
                                         <ProgressBar
                                             progress={Number(value)}
+                                            key={value}
                                             className={
                                                 styles.rating__progressbar
                                             }
