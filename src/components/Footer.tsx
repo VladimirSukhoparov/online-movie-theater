@@ -37,9 +37,6 @@ const Footer = () => {
               type="button"
               children={translation.footer_third_button}
             />
-            {/*  <button>
-                            {translation.footer_third_button}
-                        </button> */}
             <div className={styles.third_content_buttons}>
               <button>
                 <img src="https://img.icons8.com/ios-filled/50/FFFFFF/new-post.png" />
