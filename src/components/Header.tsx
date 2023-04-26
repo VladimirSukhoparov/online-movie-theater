@@ -10,7 +10,7 @@ import SubscribeContainer from "./headerComponents/SubscribeContainer"
 
 const Header = () => {
   const translation = useLocale();
-  const [focus, setFocus] = useState(5);
+  const [focus, setFocus] = useState(0);
   const [sideScroll, setSideScroll] = useState(0);
   const [sideHover, setSideHover] = useState(0);
 
@@ -29,8 +29,7 @@ const Header = () => {
   };
 
   return (
-    <div className={styles.header}>
-      {/*  onMouseLeave={() => dpropdownMenu(0) */}
+    <div className={styles.header} onMouseLeave={() => dpropdownMenu(0)}>
       <div
         className={
           focus === 0 || focus === 1
