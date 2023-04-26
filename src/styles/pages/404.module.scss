@@ -1,0 +1,8 @@
+@import '../global/colors.scss';
+.error_page{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+}

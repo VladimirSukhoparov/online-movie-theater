@@ -605,4 +605,5 @@ export const ru = {
   ],
   of_the_week: "за неделю",
   show_selection: "Показать подборку",
+  header_notification:"Здесь появляются только важные сообщения",
 };

@@ -1,0 +1,66 @@
+@import "../../global/colors.scss";
+
+.header_body_genre {
+  p {
+    color: $color-white;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+}
+
+.header_body_genre {
+  width: 33%;
+  padding: 0 12px;
+  p {
+    color: $color-white;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  ul {
+    column-count: 2;
+    column-fill: auto;
+    column-gap: 24px;
+    height: 304px;
+  }
+}
+
+.header_body_content {
+  position: relative;
+  width: 50%;
+  padding: 0 12px;
+}
+
+.header_body_country {
+  width: 17%;
+  padding: 0 12px;
+
+  p {
+    color: $color-white;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  ul {
+    column-count: 1;
+    column-fill: auto;
+    column-gap: 24px;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.header_body_line {
+  width: 300px;
+  z-index: -1;
+  border: 0.5px solid $color-white-48;
+  position: absolute;
+  left: -130px;
+  top: 150px;
+  transform: rotate(90deg);
+}

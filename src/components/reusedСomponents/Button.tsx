@@ -10,7 +10,17 @@ const Button = (props) => {
     props.classN === "header_subscribe" && classes.header_subscribe,
     props.classN === "second_content" && classes.second_content,
     props.classN === "header_notification" && classes.header_notification,
-    props.classN === "header_login" && classes.header_login
+    props.classN === "header_login" && classes.header_login,
+    props.classN === "trailer" && classes.trailer,
+    props.classN === "bookmark" && classes.bookmark,
+    props.classN === "share" && classes.share,
+    props.classN === "rating" && classes.rating,
+    props.classN === "allDevices" && classes.allDevices,
+
+
+
+
+
   );
 
   return (
@@ -22,7 +32,7 @@ const Button = (props) => {
 
 export default Button;
 
-Button.propTypes = {
+/* Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node,
   type: PropTypes.oneOf(["button", "reset", "submit"]),
@@ -33,4 +43,4 @@ Button.propTypes = {
     "header_notification",
     "header_login",
   ]),
-};
+}; */
