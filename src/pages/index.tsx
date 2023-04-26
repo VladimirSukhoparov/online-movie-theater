@@ -1,14 +1,30 @@
 import React from "react";
-import { Inter } from "next/font/google";
 import styles from "../styles/pages/MainPage.module.scss";
 import { useLocale } from "../hooks/useLocale";
 import Top10Card from "../components/Top10Card";
 import ImageCarousel from "../components/ImageCarousel";
 import top10json from "../../public/data/top10List.json";
 import promojson from "../../public/data/promoList.json";
+import posterjson from "../../public/data/posterListTEMP.json";
 import PromoCard from "../components/PromoCard";
+import PosterCard from "../components/posterComponents/PosterCard";
+import Title from "../components/Title";
 
-const inter = Inter({ subsets: ["latin"] });
+const POSTER_CARD_SAMPLE = (
+    <PosterCard
+        link={posterjson.link}
+        title={posterjson.title}
+        price={posterjson.price}
+        image={posterjson.image}
+        age={posterjson.age}
+        info={posterjson.info}
+        name={posterjson.name}
+        seasons={posterjson.seasons}
+        rating={posterjson.rating}
+        progress={posterjson.progress}
+        charts={posterjson.charts}
+    />
+);
 
 export default function Home() {
     const translation = useLocale();
@@ -43,6 +59,50 @@ export default function Home() {
                             link={item.link}
                         />
                     ))}
+                />
+            </section>
+            <section className={styles.posters}>
+                <Title
+                    link={""}
+                    name={"Лучшие комедии"}
+                    className={styles.posters__title}
+                />
+                <ImageCarousel
+                    items={[
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                    ]}
+                />
+            </section>
+            <section className={styles.posters}>
+                <Title
+                    link={""}
+                    name={"Добрые мультсериалы"}
+                    className={styles.posters__title}
+                />
+                <ImageCarousel
+                    items={[
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                        POSTER_CARD_SAMPLE,
+                    ]}
                 />
             </section>
         </div>
