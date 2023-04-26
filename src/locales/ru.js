@@ -453,105 +453,105 @@ export const ru = {
         },
       ]
     },
-    {
-      channels: [
-        {
-          text: "ТВ-каналы",
-          url: ""
-        },
-        {
-          text: "Развлекательное",
-          url: ""
-        },
-        {
-          text: "Дети",
-          url: ""
-        },
-        {
-          text: "Спортивное ТВ",
-          url: ""
-        },
-        {
-          text: "Докуменальное",
-          url: ""
-        }
-      ],
-      federal_channels: [
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage2/contents/5/5/f1e86a30aa3728b2b939bb60a3e204.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage23/contents/5/e/24b2db1593647813cc3189270023e8.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage39/contents/6/3/94247f8de64c29e262c4cb828bbd40.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage4/contents/2/3/c3862f7e847f614447a942101fa6ea.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage28/contents/4/7/5257a323a5973d1fba6c2c7c732df5.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage37/contents/6/2/0c7666fb8fe6e9212642e35a4cab79.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage39/contents/3/f/539284adaee9d9295f74bd00f01926.jpg/182x118//?q=85",
-          url: ""
-        },
-      ],
-      sport_channels: [
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage6/contents/5/9/4fa4866036f6fe0e6fc7c58fca95c2.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage3/contents/3/2/4e4d68075ba795577fa382d103c9b2.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage2/contents/b/f/3877f4b24f1e88c7d71b8bdd6332c9.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage31/contents/2/2/13fb97b2e454ae0bc0e45ef07b2ffc.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage28/contents/0/b/8636562ba22dae82bb74dda8ab630c.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage31/contents/9/8/93f16bed265ece28ac71d41fc57350.jpg/182x118//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage23/contents/4/2/48ff532cc07704f5510b5f24ff384a.jpg/182x118//?q=85",
-          url: ""
-        },
-      ],
-      popular: [
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage9/contents/3/6/7c3913447ae1b1c5e16ee7ae878a16.jpg/116x76//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage28/contents/e/e/63a0dfe3154fdced24eca8d61a0810.jpg/116x76//?q=85",
-          url: ""
-        },
-        {
-          src: "https://thumbs.dfs.ivi.ru/storage30/contents/2/6/e50e3f2262dd3046fc4a68ceb109c1.jpg/116x76//?q=85",
-          url: ""
-        },
-      ]
-    }
   ],
+  header_tv_links: {
+    channels: [
+      {
+        text: "ТВ-каналы",
+        url: ""
+      },
+      {
+        text: "Развлекательное",
+        url: ""
+      },
+      {
+        text: "Дети",
+        url: ""
+      },
+      {
+        text: "Спортивное ТВ",
+        url: ""
+      },
+      {
+        text: "Докуменальное",
+        url: ""
+      }
+    ],
+    federal_channels: [
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage2/contents/5/5/f1e86a30aa3728b2b939bb60a3e204.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage23/contents/5/e/24b2db1593647813cc3189270023e8.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage39/contents/6/3/94247f8de64c29e262c4cb828bbd40.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage4/contents/2/3/c3862f7e847f614447a942101fa6ea.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage28/contents/4/7/5257a323a5973d1fba6c2c7c732df5.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage37/contents/6/2/0c7666fb8fe6e9212642e35a4cab79.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage39/contents/3/f/539284adaee9d9295f74bd00f01926.jpg/182x118//?q=85",
+        url: ""
+      },
+    ],
+    sport_channels: [
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage6/contents/5/9/4fa4866036f6fe0e6fc7c58fca95c2.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage3/contents/3/2/4e4d68075ba795577fa382d103c9b2.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage2/contents/b/f/3877f4b24f1e88c7d71b8bdd6332c9.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/2/2/13fb97b2e454ae0bc0e45ef07b2ffc.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage28/contents/0/b/8636562ba22dae82bb74dda8ab630c.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage31/contents/9/8/93f16bed265ece28ac71d41fc57350.jpg/182x118//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage23/contents/4/2/48ff532cc07704f5510b5f24ff384a.jpg/182x118//?q=85",
+        url: ""
+      },
+    ],
+    popular: [
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage9/contents/3/6/7c3913447ae1b1c5e16ee7ae878a16.jpg/116x76//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage28/contents/e/e/63a0dfe3154fdced24eca8d61a0810.jpg/116x76//?q=85",
+        url: ""
+      },
+      {
+        src: "https://thumbs.dfs.ivi.ru/storage30/contents/2/6/e50e3f2262dd3046fc4a68ceb109c1.jpg/116x76//?q=85",
+        url: ""
+      },
+    ]
+  },
   footer_ul: [
     [
       "О нас",

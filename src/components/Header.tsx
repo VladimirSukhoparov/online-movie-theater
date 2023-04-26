@@ -166,12 +166,12 @@ const Header = () => {
                 ТВ онлайн
               </div>
                 <ul>
-                  {translation.header_links_content[3].channels.map((el) => {
+                  {translation.header_tv_links.channels.map((el) => {
                       return (
                           <li key={el.text}>
                             <Link href={el.url}>
                                 {el.text}
-                            </Link>
+                              </Link>
                           </li>
                       )
                   })}
@@ -182,7 +182,54 @@ const Header = () => {
               </Link>
           </div>
           <div className={styles.header_shows_container}>
-            
+            <div className={styles.header_shows_contant}>
+              <div className={styles.header_programs_container}>
+                <div className={styles.header_programs}>
+                  <div className={styles.header_programs_title}>
+                    Федеральные каналы
+                  </div>
+                  <div className={styles.header_programs_overflow}>
+                    {translation.header_tv_links.federal_channels.map((el) => {
+                      return (
+                      <div className={styles.header_overflow}>
+                          <img
+                            src={el.src}
+                            alt="IVI"
+                          />
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+                <div className={styles.header_programs}>
+                  <div className={styles.header_programs_title}>
+                    Спортивные каналы
+                  </div>
+                  <div className={styles.header_programs_overflow}>
+                    {translation.header_tv_links.sport_channels.map((el) => {
+                        return (
+                        <div className={styles.header_overflow}>
+                            <img
+                              src={el.src}
+                              alt="IVI"
+                            />
+                          </div>
+                        )
+                    })}
+                  </div>
+                </div>
+                <div className={styles.header_liveaction_container}>
+                  <div className={styles.header_liveaction_title}>
+                    Популярные трансляции
+                  </div>
+                  <div className={styles.header_liveaction_contant}>
+                    <div className={styles.header_liveaction}>
+                      fsdfs
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <SubscribeContainer />  
         </div>

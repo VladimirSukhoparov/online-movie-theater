@@ -283,24 +283,31 @@ const SingleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
 
 const MultipleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
     const ITEM_GAP = 24;
+
     const [galleryWidth, setGalleryWidth] = useState(0);
     const [itemWidth, setItemWidth] = useState(0);
     const [position, setPosition] = useState(0);
+
     const itemCount = (galleryWidth + ITEM_GAP) / (itemWidth + ITEM_GAP);
+
     const maxWidth =
         itemWidth * items.length +
         ITEM_GAP * (items.length - itemCount) -
         itemCount * itemWidth;
+
     const ul = useRef(null);
     const gallery = useRef(null);
     const li = useRef(null);
+
     useEffect(() => {
         ul.current.style.transform = `translateX(${position}px)`;
     }, [position]);
+
     useEffect(() => {
         setGalleryWidth(gallery.current.offsetWidth);
         setItemWidth(li.current.offsetWidth);
     }, []);
+
     const onLeftClick = () => {
         const newPos = position + galleryWidth - itemWidth;
         if (newPos > 0) {
@@ -309,6 +316,7 @@ const MultipleItemCarousel: FC<ImageCarouselProps> = ({ items }) => {
             setPosition(newPos);
         }
     };
+
     const onRightClick = () => {
         const newPos = position - galleryWidth + itemWidth;
         if (Math.abs(newPos) > maxWidth) {
