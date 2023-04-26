@@ -6,106 +6,17 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import Button from "./reusedСomponents/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
+import SubscribeContainer from "./headerComponents/SubscribeContainer"
 
 const Header = () => {
   const translation = useLocale();
-  const [focus, setFocus] = useState(2);
+  const [focus, setFocus] = useState(5);
   const [sideScroll, setSideScroll] = useState(0);
   const [sideHover, setSideHover] = useState(0);
 
-  const scrollImages = [
-    [
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151784"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151684"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151884"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/152884"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151885"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151886"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151887"
-      },
-    ],
-    [
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151888"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151889"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151880"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151814"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151824"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151834"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151844"
-      },
-    ],
-    [
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/121884"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/131884"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/141884"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/161884"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/171884"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/181884"
-      },
-      {
-        src: "https://thumbs.dfs.ivi.ru/storage31/contents/1/a/898e30c389b8323a844d3b93ee1b47.jpg/256x144//?q=85",
-        url: "watch/151234"
-      },
-    ],
-  ]
+  
 
+  // Функция для открытия Drop Меню
   const dpropdownMenu = (num) => {
     setFocus(num);
     setSideScroll(0);
@@ -118,7 +29,8 @@ const Header = () => {
   };
 
   return (
-    <div className={styles.header} onMouseLeave={() => dpropdownMenu(0)}>
+    <div className={styles.header}>
+      {/*  onMouseLeave={() => dpropdownMenu(0) */}
       <div
         className={
           focus === 0 || focus === 1
@@ -128,10 +40,12 @@ const Header = () => {
       >
         <div className={styles.header_content}>
           <div className={styles.header_content_first}>
+            <Link href="/" style={{cursor: "pointer"}}>
             <img
               src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
               alt="IVI"
             />
+            </Link>
             <nav>
               <ul>
                 {translation.header.map((el, index) => {
@@ -168,7 +82,9 @@ const Header = () => {
             />
           </div>
         </div>
-        {focus > 1 ? <div className={styles.header_dropdown_container}>
+        {/* Drop Меню для фильмов, сериалов и мультсериалов */}
+        {focus > 1 && focus < 5? <div className={styles.header_dropdown_container}>
+          <hr />
           <div className={styles.header_dropdown_genres}>
             <div className={styles.header_title}>
             {translation.welcome === "добро пожаловать" ? "Жанры" : "Genres"}
@@ -236,55 +152,39 @@ const Header = () => {
                 })}
               </ul>
             </div>
-            <div className={styles.header_sidecontent_subscribe}>
-              <div className={styles.header_subscribe_ivi}>
-                <div className={styles.subscribe_left_fade}>
-                </div>
-                <div className={styles.subscribe_right_fade}>
-                </div>
-                <div className={styles.header_subscribe_posters}>
-                  <div className={styles.posters_container}>
-                  <div className={styles.posters_contant}>
-                    {scrollImages[0].map((el) => {
-                      return (
-                        <img src={el.src} alt="" key={el.url}/>
-                      )
-                    })}
-                  </div>
-                  <div className={styles.posters_contant_second}>
-                    {scrollImages[1].map((el) => {
-                      return (
-                        <img src={el.src} alt="" key={el.url}/>
-                      )
-                    })}
-                  </div>
-                  <div className={styles.posters_contant}>
-                    {scrollImages[2].map((el) => {
-                      return (
-                        <img src={el.src} alt="" key={el.url}/>
-                      )
-                    })}
-                  </div>
-                  </div> 
-                  <div className={styles.posters_button}>
-                    <img src="https://ruvod.com/wp-content/uploads/2022/09/Default.png" alt="" />
-                    <div className={styles.posters_button_text}>
-                    <span>
-                      Подписка Иви
-                    </span>
-                    <p>
-                    От 199 ₽ за месяц
-                    </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <Link href="https://www.ivi.ru/pages/tvsmart/">
-                <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/tv.png"/>
-                Смотреть на SmartTV
-              </Link>
-            </div>
+            <SubscribeContainer />
           </div>
+        </div>
+        : null 
+        }
+        {/* Меню для TV+ */}
+        {focus === 5? <div className={styles.header_dropdown_container}>
+          <hr />
+          <div className={styles.header_channels_container}>
+            <div>
+              <div className={styles.header_title}>
+                ТВ онлайн
+              </div>
+                <ul>
+                  {translation.header_links_content[3].channels.map((el) => {
+                      return (
+                          <li key={el.text}>
+                            <Link href={el.url}>
+                                {el.text}
+                            </Link>
+                          </li>
+                      )
+                  })}
+                </ul>
+            </div>
+              <Link href="https://www.ivi.ru/tvplus/tv-schedule-today" className={styles.tv_button}>
+                  {translation.welcome === "добро пожаловать" ? "Телепрограмма" : "TV program"}
+              </Link>
+          </div>
+          <div className={styles.header_shows_container}>
+            
+          </div>
+          <SubscribeContainer />  
         </div>
         : null 
         }

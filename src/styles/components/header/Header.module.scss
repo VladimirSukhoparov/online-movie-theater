@@ -28,20 +28,20 @@
     column-gap: 24px;
     height: $height;
     white-space: nowrap;
-    li {
-      cursor: pointer;
-      margin-top: 8px;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 20px;
-      color: hsla(0, 0%, 100%, 0.48);
-    }
-    li:first-child {
-      margin-top: 0px;
-    }
-    li:hover {
-      color: white;
-    }
+      li {
+        cursor: pointer;
+        margin-top: 8px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
+        color: hsla(0, 0%, 100%, 0.48);
+      }
+      li:first-child {
+        margin-top: 0px;
+      }
+      li:hover {
+        color: white;
+      }
   }
 }
 
@@ -127,10 +127,58 @@
     background: #1f1b2e;
     border-radius: 12px;
     box-shadow: 0 20px 96px #12101b;
+    border-top: 1px solid hsla(0,0%,100%,.16);
     .header_dropdown_container {
       box-sizing: border-box;
       padding: 32px;
       display: flex;
+      hr {
+        width: 100%;
+        background-color: hsla(0,0%,100%,.16);
+        border: 0px;
+        height: 1px;
+        left: 0px;
+        pointer-events: none;
+        position: absolute;
+        right: 0px;
+        top: 75px;
+        transition-duration: 80ms;
+        z-index: 1;
+      }
+      // Код для TV+ Drop Меню и участок кода с "Подписка Иви" для обоих участков 1
+      .header_channels_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 16.66666667%;
+        box-sizing: border-box;
+        padding-left: 12px;
+        padding-right: 12px;
+        @include dropdown_menu(auto);
+        .tv_button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #312b45;
+          border-color: #312b45;
+          border-radius: 8px;
+          border-width: 1px;
+          height: 40px;
+          padding: 9px 15px;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 20px;
+          color: #fff;
+        }
+      }
+      .header_channels_container {
+        width: 83.33333333%;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-left: 1px solid hsla(0,0%,100%,.16);
+      }
+      // Код для обычного Drop Меню
       .header_dropdown_genres {
         width: 33.33333333%;
         box-sizing: border-box;
@@ -309,6 +357,7 @@
               }
             }
           }
+          // Ссылка с "Смотреть на SmartTV"
           a {
             display: flex;
             align-items: center;
