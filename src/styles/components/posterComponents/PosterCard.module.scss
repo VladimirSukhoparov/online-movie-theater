@@ -1,0 +1,124 @@
+.container {
+    width: 153px;
+}
+
+.main {
+    position: relative;
+    margin-bottom: 5px;
+    transition-duration: 0.2s;
+    &_hover {
+        transform: scale(1.04);
+    }
+    &__images {
+        transition-duration: 0.4s;
+        &_hover {
+            filter: brightness(30%);
+        }
+    }
+    &__background {
+        width: 100%;
+        border-radius: 8px;
+        transition-duration: 0.4s;
+    }
+    &__panel {
+        transition-duration: 0.4s;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &__info {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+    }
+    &__icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 1;
+    }
+}
+
+.age {
+    position: absolute;
+    bottom: 8px;
+    right: 4px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+
+    &__charts {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    &__progressbar {
+        width: 20px;
+        height: 2px;
+    }
+}
+
+.number {
+    color: white;
+    font-weight: 700;
+
+    &__integer {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    &__fractional {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+.progressbar {
+    width: 104px;
+    height: 4px;
+    margin-bottom: 5px;
+}
+
+.text {
+    color: #d9d7e0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 3px;
+}
+
+.title {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: #d9d7e0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    &_hover {
+        color: white;
+    }
+}
+
+.price {
+    color: #ea003d;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    &_free {
+        color: #a5a1b2;
+    }
+}

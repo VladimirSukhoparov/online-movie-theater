@@ -26,6 +26,13 @@
     }
 }
 
+.posters {
+    padding: 24px 0;
+    &__title {
+        margin-bottom: 24px;
+    }
+}
+
 //////
 .main {
     display: flex;
