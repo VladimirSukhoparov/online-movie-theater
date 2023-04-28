@@ -9,7 +9,7 @@
         { "text": "Фильмы", "path": "/movies" },
         { "text": "Сериалы", "path": "/s" },
         { "text": "Мультфильмы", "path": "/" },
-        { "text": "TV+", "path": "/" }
+        { "text": "TV+", "path": "https://www.ivi.ru/tvplus" }
     ],
     "header_links_content": [
         {
@@ -151,23 +151,23 @@
         "channels": [
             {
               "text": "ТВ-каналы",
-              "url": ""
+              "url": "https://www.ivi.ru/tvplus"
             },
             {
               "text": "Развлекательное",
-              "url": ""
+              "url": "https://www.ivi.ru/tvplus/razvlekatelnoe"
             },
             {
               "text": "Дети",
-              "url": ""
+              "url": "https://www.ivi.ru/tvplus/deti"
             },
             {
               "text": "Спортивное ТВ",
-              "url": ""
+              "url": "https://www.ivi.ru/tvplus/sport"
             },
             {
               "text": "Докуменальное",
-              "url": ""
+              "url": "https://www.ivi.ru/tvplus/documentalnoe"
             }
           ],
           "federal_channels": [

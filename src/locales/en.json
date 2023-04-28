@@ -9,7 +9,7 @@
         { "text": "Movies", "path": "/" },
         { "text": "Series", "path": "/" },
         { "text": "Cartoons", "path": "/" },
-        { "text": "TV+", "path": "/" }
+        { "text": "TV+", "path": "https://www.ivi.ru/tvplus" }
     ],
     "header_links_content": [
         {
@@ -151,23 +151,23 @@
     "header_tv_links": {
         "channels": [
             {
-              "text": "ТВ-каналы",
+              "text": "TV-channels",
               "url": ""
             },
             {
-              "text": "Развлекательное",
+              "text": "Entertaining",
               "url": ""
             },
             {
-              "text": "Дети",
+              "text": "For kids",
               "url": ""
             },
             {
-              "text": "Спортивное ТВ",
+              "text": "Sport TV",
               "url": ""
             },
             {
-              "text": "Докуменальное",
+              "text": "Documentary",
               "url": ""
             }
           ],
@@ -231,18 +231,18 @@
               "url": ""
             }
           ],
-          "popular": [
+          "liveaction": [
             {
               "src": "https://thumbs.dfs.ivi.ru/storage9/contents/3/6/7c3913447ae1b1c5e16ee7ae878a16.jpg/116x76//?q=85",
-              "url": ""
+              "url": "https://www.ivi.ru/broadcast/7989",
+              "rivals": "УНИКС-Зенит",
+              "time": "Live on"
             },
             {
               "src": "https://thumbs.dfs.ivi.ru/storage28/contents/e/e/63a0dfe3154fdced24eca8d61a0810.jpg/116x76//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage30/contents/2/6/e50e3f2262dd3046fc4a68ceb109c1.jpg/116x76//?q=85",
-              "url": ""
+              "url": "https://www.ivi.ru/broadcast/7997",
+              "rivals": "УНИКС-Зенит",
+              "time": "Live on"
             }
           ]
     },
