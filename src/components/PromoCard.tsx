@@ -15,7 +15,7 @@ interface PromoCardProps {
 }
 
 const PromoCard: FC<PromoCardProps> = ({ image, title, synopsis }) => {
-    const translation = useLocale();
+    const { common: translation } = useLocale();
     const [width, setWidth] = useState(0);
     const MOBILE_BREAKPOINT = 599;
     useEffect(() => {

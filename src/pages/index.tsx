@@ -27,7 +27,7 @@ const POSTER_CARD_SAMPLE = (
 );
 
 export default function Home() {
-    const translation = useLocale();
+    const { common: translation } = useLocale();
     return (
         <div className={styles.container}>
             <ImageCarousel

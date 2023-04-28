@@ -1,0 +1,79 @@
+{
+    "ul": [
+        [
+            "О нас",
+            "О компании",
+            "Вакансии",
+            "Программа бета-тестирования",
+            "Информация для партнёров",
+            "Размещение рекламы",
+            "Пользовательское соглашение",
+            "Политика конфиденциальности",
+            "Комплаенс"
+        ],
+        [
+            "Разделы",
+            "Мой Иви",
+            "Что нового",
+            "Фильмы",
+            "Сериалы",
+            "Мультфильмы",
+            "TV+",
+            "Что посмотреть",
+            "Активация сертификата"
+        ]
+    ],
+    "third_title": "Служба поддержки",
+    "third_span": "Мы всегда готовы вам помочь. Наши операторы онлайн 24/7",
+    "third_button": "Написать в чате",
+    "third_p": "Ответы на вопросы",
+    "fourth": "Смотрите фильмы, сериалы и мультфильмы без рекламы",
+    "second_ul": [
+        {
+            "img": "https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/appleLogo.svg",
+            "p": "Загрузить в",
+            "text": "App Store"
+        },
+        {
+            "img": "https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/googlePlayLogo.svg",
+            "p": "Доступно в",
+            "text": "Google Play"
+        },
+        {
+            "img": "https://img.icons8.com/sf-black-filled/64/FFFFFF/tv.png",
+            "p": "Смотрите на",
+            "text": "Smart TV"
+        },
+        {
+            "img": "https://img.icons8.com/ios/50/FFFFFF/multiple-devices.png",
+            "text": "Все устройства"
+        }
+    ],
+    "mobile": [
+        {
+            "text": "Мой Иви",
+            "path": "/",
+            "img": "https://static.vecteezy.com/system/resources/previews/013/743/156/non_2x/white-house-icon-png.png"
+        },
+        {
+            "text": "Каталог",
+            "path": "/",
+            "img": "https://img.icons8.com/ios-glyphs/30/FFFFFF/folder-invoices--v1.png"
+        },
+        {
+            "text": "Поиск",
+            "path": "/",
+            "img": "https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png"
+        },
+        {
+            "text": "TV+",
+            "path": "/s",
+            "img": "https://img.icons8.com/ios-glyphs/30/FFFFFF/tv.png"
+        },
+        {
+            "text": "Еще",
+            "path": "/",
+            "img": "https://img.icons8.com/ios-filled/50/FFFFFF/more.png"
+        }
+    ]
+}
