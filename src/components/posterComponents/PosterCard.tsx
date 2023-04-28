@@ -94,7 +94,7 @@ const PosterCard: FC<PosterCardProps> = ({
                                         {integerRating}
                                     </span>
                                     <span className={styles.number__fractional}>
-                                        ,{fractionalRating}
+                                        {fractionalRating}
                                     </span>
                                 </div>
                                 <div className={styles.rating__charts}>

@@ -33,11 +33,11 @@ const CardMovie = ({ film }) => {
     document.body.style.overflow = "auto";
   }
 
-  const [count, setCount] = useState(film.rating.kp);
+  const [count, setCount] = useState(film.rating?.kp);
   const updateRating = (e) => {
     let value = e.target.id;
-    value < count && setCount(count - (count - value) * 0.001);
-    value > count && setCount(count + (value - count) * 0.001);
+    value < count && setCount(count - (count - value) * 0.005);
+    value > count && setCount(count + (value - count) * 0.005);
     value === count && setCount(count);
     closeModal();
   };

@@ -1,0 +1,196 @@
+@import "../../global/colors.scss";
+
+.container {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -1;
+    background-color: $color-black-modal;
+    color: $color-white;
+}
+.content {
+    padding: 32px 0;
+    width: 1240px;
+    margin: 0 auto;
+    min-height: 100vh;
+    &_back {
+        height: 52px;
+        padding: 16px;
+        opacity: 0.72;
+        display: flex;
+        align-items: center;
+        &:hover {
+            opacity: 1;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+            line-height: 20px;
+            align-self: center;
+            transition-duration: 0.4s;
+        }
+        p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 500;
+            font-style: normal;
+            margin-left: 8px;
+            align-self: center;
+            transition-duration: 0.4s;
+        }
+    }
+}
+
+.movie {
+    &_container {
+        padding: 0 12px;
+        padding-top: 32px;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        color: $color-gray-modal;
+    }
+    &_content {
+        width: 50%;
+        margin-left: 12.5%;
+        &_title {
+            color: $color-white;
+            margin-bottom: 20px;
+            font-size: 40px;
+            line-height: 44px;
+            font-weight: 900;
+            font-style: normal;
+        }
+        &_list {
+            height: 40px;
+            white-space: nowrap;
+            list-style: none;
+
+            li {
+                will-change: opacity;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                display: inline-block;
+                position: relative;
+                color: $color-white-48;
+                transition-duration: 0.4s;
+                &:not(:first-child) {
+                    margin-left: 24px;
+                }
+                &:hover {
+                    color: $color-white;
+                }
+                a {
+                    cursor: pointer;
+                    opacity: 0.72;
+
+                    font-size: 15px;
+                    line-height: 20px;
+                    font-weight: 500;
+                    font-style: normal;
+                }
+                sup {
+                    font-size: 13px;
+                    line-height: 16px;
+                    font-weight: 400;
+                    font-style: normal;
+                    color: $color-gray-modal;
+                    padding-left: 4px;
+                    display: inline-block;
+                    height: 100%;
+                }
+            }
+        }
+
+        hr {
+            border-color: $color-gray-modal;
+            margin-bottom: 32px;
+        }
+    }
+    &_poster {
+        width: 12.5%;
+        margin-left: 12.5%;
+        padding: 0 12px;
+        a {
+            height: 100%;
+            &_hover {
+                transform: scale(1.04);
+            }
+            img {
+                width: 128px;
+                &_hover {
+                    transform: scale(1.04);
+                }
+            }
+        }
+    }
+    &_info {
+        width: 130px;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 400;
+        font-style: normal;
+        color: $color-gray-modal;
+    }
+}
+.active {
+    color: $color-white !important;
+    border-bottom: 4px solid $color-red-button-hover;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    padding-top: 14px;
+
+    &_charts {
+        width: 20px;
+        height: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+}
+
+.number {
+    color: $color-white;
+    font-weight: 700;
+
+    &__integer {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.text {
+    color: $color-gray-modal;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 3px;
+    word-wrap: break-word;
+}
+
+.bar {
+    background-color: hsla(254, 9%, 52%, 0.32);
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.progress {
+    background-color: #ea003d;
+    border-radius: 2px;
+    height: 100%;
+}
