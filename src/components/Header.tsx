@@ -10,20 +10,20 @@ import SubscribeContainer from "./headerComponents/SubscribeContainer";
 
 const Header = () => {
   const { header: translation } = useLocale();
-  const [focus, setFocus] = useState(0);
+  const [focus, setFocus] = useState(7);
   const [dropdownHeight, setDropdownHeight] = useState(0);
   const [sideScroll, setSideScroll] = useState(0);
   const [sideHover, setSideHover] = useState(0);
 
   // Функция для открытия Drop Меню
-  const dpropdownMenu = (index, height) => {
+  const dpropdownMenu = (index: number, height: number) => {
     setFocus(index);
     setDropdownHeight(height);
     setSideScroll(0);
     setSideHover(0);
   };
 
-  const scroll = (num) => {
+  const scroll = (num: number) => {
     setSideScroll(num * 27);
     setSideHover(num);
   };
@@ -76,6 +76,7 @@ const Header = () => {
               classN="header_notification"
               type="button"
               children={<FontAwesomeIcon icon={faBell} />}
+              onMouseEnter={() => dpropdownMenu(6, 344)}
             />
             <Button
               classN="header_login"
@@ -270,12 +271,42 @@ const Header = () => {
             <SubscribeContainer />
           </div>
         ) : null}
+        {/* Drop Меню для Уведомлений */}
+        {focus === 6 ? (
+          <div className={styles.header_dropdown_container}>
+            <hr />
+            <div className={styles.header_bell_container}>
+              <img src="https://img.icons8.com/ios-filled/50/737373/alarm.png" />
+              <span>{translation.genres === "Жанры" ? "Здесь появляются только важные сообщения" : "Only important messages appear here"}</span>
+            </div>
+          </div>
+        ) : null}
         {/* Drop Меню для Авторизации */}
         {focus === 7 ? (
           <div className={styles.header_dropdown_container}>
             <hr />
             <div className={styles.header_cards_container}>
-
+              {translation.authorization_dropdown.cards.map((el, index) => {
+                return (
+                  <Link href={el.url}>
+                    {index === 3 ? <div className={styles.header_card_redpoint}></div> : null}
+                    <img src={el.icon} />
+                    <div className={styles.header_card_text} style={index === 3 ? {bottom: "36px"} : {bottom: "16px"}}>{el.text}</div>
+                    {index === 3 ? <p>{translation.genres === "Жанры" ? "Подключить" : "To plug"}</p> : null}
+                  </Link>
+                )
+              })}
+            </div>
+            <div className={styles.header_authorization_container}>
+              <div className={styles.header_authorization_content}>
+                <button>
+                  {translation.genres === "Жанры" ? "Войти или зарегистрироваться" : "Sign In or Sign Up"}
+                </button>
+                <div className={styles.header_authorization_help}>
+                  <Link href="https://www.ivi.ru/profile/settings">{translation.genres === "Жанры" ? "Настройки" : "Settings"}</Link>
+                  <Link href="https://ask.ivi.ru/">{translation.genres === "Жанры" ? "Помощь" : "Help"}</Link>
+                </div>
+              </div>
             </div>
           </div>
         ) : null}

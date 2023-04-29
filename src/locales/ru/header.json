@@ -250,29 +250,46 @@
     "authorization_dropdown": {
         "cards": [
             {
-                "icon": "",
-                "text": ""
+                "url": "https://www.ivi.ru/profile/purchases",
+                "icon": "https://img.icons8.com/external-tal-revivo-bold-tal-revivo/24/737373/external-remove-unwanted-webpage-tabs-of-a-web-browser-landing-bold-tal-revivo.png",
+                "text": "Покупки"
             },
             {
-                "icon": "",
-                "text": ""
+                "url": "https://www.ivi.ru/profile/favorites",
+                "icon": "https://img.icons8.com/ios-glyphs/30/737373/bookmark-ribbon.png",
+                "text": "Смотреть позже"
             },
             {
-                "icon": "",
-                "text": ""
+                "url": "https://www.ivi.ru/profile/watched",
+                "icon": "https://img.icons8.com/material-outlined/24/737373/time-machine.png",
+                "text": "История просмотров"
             },
             {
-                "icon": "",
-                "text": ""
+                "url": "https://www.ivi.ru/profile/subscriptions",
+                "icon": "https://img.icons8.com/ios-filled/50/737373/diamond--v1.png",
+                "text": "Подписки"
             },
             {
-                "icon": "",
-                "text": ""
+                "url": "https://www.ivi.ru/profile/cards",
+                "icon": "https://img.icons8.com/glyph-neue/64/737373/prize--v1.png",
+                "text": "Активация сертификата"
             },
             {
-                "icon": "",
-                "text": ""
+                "url": "https://www.ivi.ru/profile/cards",
+                "icon": "https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/737373/external-tv-network-and-communication-smashingstocks-glyph-smashing-stocks-2.png",
+                "text": "Вход по коду"
+            },
+            {
+                "url": "https://www.ivi.ru/profile/cards",
+                "icon": "https://img.icons8.com/ios-filled/50/737373/bank-card-back-side.png",
+                "text": "Способы оплаты"
+            },
+            {
+                "url": "https://www.ivi.ru/profile/referral",
+                "icon": "https://img.icons8.com/material-sharp/24/737373/share.png",
+                "text": "Пригласить друзей"
             }
         ]
     }
-}
+  }
+  
