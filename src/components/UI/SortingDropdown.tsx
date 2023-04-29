@@ -1,5 +1,5 @@
 import { FC, useRef, useState } from "react";
-import styles from "../../styles/components/reusedСomponents/SortingDropdown.module.scss";
+import styles from "../../styles/components/UI/SortingDropdown.module.scss";
 import { useLocale } from "../../hooks/useLocale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -50,6 +50,7 @@ const SortingDropdown: FC = () => {
             ].join(" ")}
             onClick={onOptionClick}
             data-index={index}
+            key={index}
             ref={(el) => (optionsRef.current[index] = el)}
           >
             {name}
