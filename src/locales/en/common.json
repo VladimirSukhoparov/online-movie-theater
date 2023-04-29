@@ -1,6 +1,13 @@
 {
-    "locale-name_en": "Eng",
-    "locale-name_ru": "Ru",
-    "of_the_week": "of the week",
-    "show_selection": "Show selection"
+  "locale-name_en": "Eng",
+  "locale-name_ru": "Ru",
+  "of_the_week": "of the week",
+  "show_selection": "Show selection",
+  "sorting": {
+    "sort": "Sort",
+    "by_rating": "By rating",
+    "by_alphabet": "Alphabetically",
+    "by_date": "By release date (newest first)",
+    "by_amount": "By the number of ratings"
+  }
 }
