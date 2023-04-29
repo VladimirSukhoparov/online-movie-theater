@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <div className={styles.header} onMouseLeave={() => dpropdownMenu(0)}>
+    <div className={styles.header} onMouseLeave={() => dpropdownMenu(0, 0)}>
       <div
         className={
           focus < 2
