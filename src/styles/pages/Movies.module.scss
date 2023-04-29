@@ -1,5 +1,8 @@
-@import '../global/colors.scss';
+@import "../global/colors.scss";
 
-.movies{
-    color: $color-white-80;
+.movies {
+  color: $color-white-80;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

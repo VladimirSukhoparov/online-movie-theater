@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 import PropTypes from "prop-types";
 
-import classes from "../../styles/components/reusedСomponents/Button.module.scss";
+import classes from "../../styles/components/UI/Button.module.scss";
 
 const Button = (props) => {
   const mainCn = cn(
@@ -15,12 +15,7 @@ const Button = (props) => {
     props.classN === "bookmark" && classes.bookmark,
     props.classN === "share" && classes.share,
     props.classN === "rating" && classes.rating,
-    props.classN === "allDevices" && classes.allDevices,
-
-
-
-
-
+    props.classN === "allDevices" && classes.allDevices
   );
 
   return (

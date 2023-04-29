@@ -1,6 +1,13 @@
 {
-    "locale-name_en": "Англ",
-    "locale-name_ru": "Ру",
-    "of_the_week": "за неделю",
-    "show_selection": "Показать подборку"
+  "locale-name_en": "Англ",
+  "locale-name_ru": "Ру",
+  "of_the_week": "за неделю",
+  "show_selection": "Показать подборку",
+  "sorting": {
+    "sort": "Сортровать",
+    "by_rating": "По рейтингу",
+    "by_alphabet": "По алфавиту",
+    "by_date": "По дате выхода (сначала свежие)",
+    "by_amount": "По количеству оценок"
+  }
 }
