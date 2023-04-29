@@ -1,0 +1,23 @@
+{
+    "title":"Movie",
+    "hour":"h.",
+    "minutes":"min.",
+    "voiceLanguage":"Rus",
+    "preSubtitles":"Rus",
+    "rating":"Rating",
+    "ivi":"Ivi",
+    "paragraph":"We invite you to watch the movie",
+    "paragraph2":"in our online cinema completely free of charge in good HD quality. Enjoy watching!",
+    "languages":"Languages",
+    "language":"Russian, English",
+    "subtitles":"Subtitles",
+    "subtitle":"Russian",
+    "imgSound":"Image and sound.",
+    "quality":"Actual quality may vary by device and copyright restrictions.",
+    "showDetail":"Movie details",
+    "hideDetail":"Collapse details",
+    "plot":"Interesting story",
+    "evaluation":"evaluate",
+    "ratings":"ratings",
+    "trailer":"Trailer"
+}

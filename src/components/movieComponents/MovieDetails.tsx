@@ -4,15 +4,18 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import films from "../../../public/data/example.json";
 import styles from "../../styles/components/movieComponents/MovieDetails.module.scss";
+import { useLocale } from "../../hooks/useLocale";
+
 import ProgressBar from "../posterComponents/ProgressBar";
 
 const MovieDetails = ({ children, id }) => {
+    const { movieDetails: translation } = useLocale();
     const [isVisible, setIsVisible] = useState("person");
     const film = films;
     const items = [
-        { id: 1, name: "Создатели", href: "person" },
-        { id: 2, name: "Комментарии", href: "comments" },
-        { id: 3, name: "Трейлеры", href: "trailers" },
+        { id: 1, name: translation.creators, href: "person" },
+        { id: 2, name: translation.comments, href: "comments" },
+        { id: 3, name: translation.trailers, href: "trailers" },
     ];
 
     return (
@@ -20,12 +23,12 @@ const MovieDetails = ({ children, id }) => {
             <div className={styles.content}>
                 <Link href={`/movies/${id}`} className={styles.content_back}>
                     <FontAwesomeIcon icon={faChevronLeft} />
-                    <p>К фильму</p>
+                    <p>{translation.button}</p>
                 </Link>
                 <div className={styles.movie_container}>
                     <div className={styles.movie_content}>
                         <p className={styles.movie_content_title}>
-                            {film.name} (Фильм {film.year})
+                            {film.name} {`${translation.title} ${film.year}`}
                         </p>
                         <ul
                             className={styles.movie_content_list}

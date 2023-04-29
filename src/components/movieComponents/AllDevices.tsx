@@ -2,23 +2,24 @@ import React from "react";
 import styles from "../../styles/components/movieComponents/AllDevices.module.scss";
 import Link from "next/link";
 import Button from "../UI/Button";
+import { useLocale } from "../../hooks/useLocale";
 
 const AllDevices = ({ film }) => {
+  const { allDevices: translation } = useLocale();
   return (
     <div className={styles.allDevices}>
       <div className={styles.allDevices_link}>
         <p className={styles.allDevices_link_title}>
-          Cмотреть «{film.name}» на всех устройствах
+          {`${translation.title1} «${film.name}» ${translation.title2}`}
         </p>
         <p className={styles.allDevices_link_subTitle}>
-          Приложение доступно для скачивания на iOS, Android, SmartTV и
-          приставках
+        {translation.paragraph}
         </p>
         <Link href={"https://www.ivi.ru/devices"}>
           <Button
             classN="allDevices"
             type="button"
-            children={"Подключить устройства"}
+            children={translation.button}
           />
         </Link>
       </div>

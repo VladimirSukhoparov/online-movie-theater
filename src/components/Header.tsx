@@ -10,7 +10,7 @@ import SubscribeContainer from "./headerComponents/SubscribeContainer";
 
 const Header = () => {
   const { header: translation } = useLocale();
-  const [focus, setFocus] = useState(7);
+  const [focus, setFocus] = useState(0);
   const [dropdownHeight, setDropdownHeight] = useState(0);
   const [sideScroll, setSideScroll] = useState(0);
   const [sideHover, setSideHover] = useState(0);
@@ -52,7 +52,7 @@ const Header = () => {
                   return (
                     <Link
                       href={el.path}
-                      key={translation.sections.indexOf(el)}
+                      key={index}
                       onMouseEnter={() => dpropdownMenu(index, 460)}
                     >
                       <li>{el.text}</li>
@@ -98,8 +98,8 @@ const Header = () => {
               </div>
               <ul>
                 {translation.links_content[focus - 2].genres.map(
-                  (el) => {
-                    return <li key={el.text}>{el.text}</li>;
+                  (el,ind) => {
+                    return <li key={ind}>{el.text}</li>;
                   }
                 )}
               </ul>
@@ -113,8 +113,8 @@ const Header = () => {
                 </div>
                 <ul>
                   {translation.links_content[focus - 2].countries.map(
-                    (el) => {
-                      return <li key={el.text}>{el.text}</li>;
+                    (el, ind) => {
+                      return <li key={ind}>{el.text}</li>;
                     }
                   )}
                 </ul>
@@ -127,8 +127,8 @@ const Header = () => {
                 </div>
                 <ul>
                   {translation.links_content[focus - 2].years.map(
-                    (el) => {
-                      return <li key={el.text}>{el.text}</li>;
+                    (el, ind) => {
+                      return <li key={ind}>{el.text}</li>;
                     }
                   )}
                 </ul>
@@ -149,7 +149,7 @@ const Header = () => {
                     if (sideHover === index) {
                       return (
                         <li
-                          key={el.text}
+                          key={index}
                           onMouseEnter={() => scroll(index)}
                           style={{ color: "white" }}
                         >
@@ -158,7 +158,7 @@ const Header = () => {
                       );
                     } else {
                       return (
-                        <li key={el.text} onMouseEnter={() => scroll(index)}>
+                        <li key={index} onMouseEnter={() => scroll(index)}>
                           {el.text}
                         </li>
                       );
@@ -182,9 +182,9 @@ const Header = () => {
                     : "TV online"}
                 </div>
                 <ul>
-                  {translation.tv_links.channels.map((el) => {
+                  {translation.tv_links.channels.map((el,ind) => {
                     return (
-                      <li key={el.text}>
+                      <li key={ind}>
                         <Link href={el.url}>{el.text}</Link>
                       </li>
                     );
@@ -211,9 +211,9 @@ const Header = () => {
                     </div>
                     <div className={styles.header_programs_overflow}>
                       {translation.tv_links.federal_channels.map(
-                        (el) => {
+                        (el, ind) => {
                           return (
-                            <div className={styles.header_overflow} key={el.src}>
+                            <div className={styles.header_overflow} key={ind}>
                               <img src={el.src} alt="IVI" />
                             </div>
                           );
@@ -228,9 +228,9 @@ const Header = () => {
                         : "Sport channels"}
                     </div>
                     <div className={styles.header_programs_overflow}>
-                      {translation.tv_links.sport_channels.map((el) => {
+                      {translation.tv_links.sport_channels.map((el, ind) => {
                         return (
-                          <div className={styles.header_overflow}>
+                          <div className={styles.header_overflow} key={ind}>
                             <img src={el.src} alt="IVI" />
                           </div>
                         );
@@ -244,9 +244,9 @@ const Header = () => {
                         : "Popular broadcast"}
                     </div>
                     <div className={styles.header_liveaction_contant}>
-                      {translation.tv_links.liveaction.map((el) => {
+                      {translation.tv_links.liveaction.map((el, ind) => {
                         return (
-                          <Link href={el.url}>
+                          <Link href={el.url} key={ind}>
                             <img src={el.src} alt="IVI" />
                             <div className={styles.header_liveaction_text}>
                               <div className={styles.header_rivals}>
@@ -288,7 +288,7 @@ const Header = () => {
             <div className={styles.header_cards_container}>
               {translation.authorization_dropdown.cards.map((el, index) => {
                 return (
-                  <Link href={el.url}>
+                  <Link href={el.url} key={index}>
                     {index === 3 ? <div className={styles.header_card_redpoint}></div> : null}
                     <img src={el.icon} />
                     <div className={styles.header_card_text} style={index === 3 ? {bottom: "36px"} : {bottom: "16px"}}>{el.text}</div>
