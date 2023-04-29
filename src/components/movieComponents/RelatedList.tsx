@@ -3,6 +3,7 @@ import styles from '../../styles/components/movieComponents/RelatedList.module.s
 import PosterCard from '../posterComponents/PosterCard'
 import posterjson from '../../../public/data/posterListTEMP.json'
 import ImageCarousel from '../ImageCarousel';
+import { useLocale } from "../../hooks/useLocale";
 
 const POSTER_CARD_SAMPLE = (
   <PosterCard
@@ -21,11 +22,11 @@ const POSTER_CARD_SAMPLE = (
 );
 
 const RelatedList = ({film}) => {
-    
+  const { relatedList: translation } = useLocale();
   return (
     <div className={styles.container}>
       
-        <div className={styles.container_title}>{`С фильмом «${film.name}» смотрят`}</div>
+        <div className={styles.container_title}>{`${translation.title1} «${film.name}» ${translation.title2}`}</div>
        
            <ImageCarousel  items={[
                         POSTER_CARD_SAMPLE,

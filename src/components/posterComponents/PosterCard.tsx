@@ -78,10 +78,10 @@ const PosterCard: FC<PosterCardProps> = ({
                   </span>
                 </div>
                 <div className={styles.rating__charts}>
-                  {charts.map((value) => (
+                  {charts.map((value, index) => (
                     <ProgressBar
                       progress={Number(value)}
-                      key={value}
+                      key={index}
                       className={styles.rating__progressbar}
                     />
                   ))}
