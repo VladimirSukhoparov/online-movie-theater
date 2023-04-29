@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Modal from "react-modal";
-import Button from "../reusedСomponents/Button";
+import Button from "../UI/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/components/movieComponents/CardMovie.module.scss";
 import {
@@ -67,19 +67,14 @@ const CardMovie = ({ film }) => {
         <div className={styles.card_container}>
           <div className={styles.card_player}>
             <div className={styles.card_movie}>
-              <Player url={'https://www.youtube.com/watch?v=zwpV5grj0Sk'} />
+              <Player url={"https://www.youtube.com/watch?v=zwpV5grj0Sk"} />
             </div>
             <div className={styles.card_user_btn}>
               <Button
                 classN="trailer"
                 type="button"
                 children={
-                  <Link
-                    href={
-                      film.videos.trailers[0].url
-                    }
-                    target={"_blank"}
-                  >
+                  <Link href={film.videos.trailers[0].url} target={"_blank"}>
                     <FontAwesomeIcon icon={faPlay} />
                     <p>Трейлер</p>
                   </Link>
@@ -98,12 +93,8 @@ const CardMovie = ({ film }) => {
             </div>
           </div>
           <div className={styles.card_info}>
-            <p className={styles.card_title}>
-              {film.name}
-            </p>
-            <p className={styles.card_title}>
-             (Фильм {film.year})
-            </p>
+            <p className={styles.card_title}>{film.name}</p>
+            <p className={styles.card_title}>(Фильм {film.year})</p>
             <div className={styles.card_params}>
               <ul className={styles.card_paramsList}>
                 <li className={styles.card_paramsLink}>
@@ -116,15 +107,16 @@ const CardMovie = ({ film }) => {
                 {film.countries.map((el) => (
                   <li className={styles.card_paramsLink} key={el.name}>
                     <Link href={el.name}>{el.name}</Link>
-                    {(film.countries.indexOf(el)!==(film.countries.length-1)) &&
-                     <span className={styles.card_paramsPoint}>&#183;</span>
-                    }
+                    {film.countries.indexOf(el) !==
+                      film.countries.length - 1 && (
+                      <span className={styles.card_paramsPoint}>&#183;</span>
+                    )}
                   </li>
                 ))}
 
                 {film.genres.map((el) => (
                   <li className={styles.card_paramsLink} key={el.name}>
-                      <span className={styles.card_paramsPoint}>&#183;</span>
+                    <span className={styles.card_paramsPoint}>&#183;</span>
                     <Link href={el.name}>
                       {el.name.replace(el.name[0], el.name[0].toUpperCase())}
                     </Link>
@@ -150,14 +142,10 @@ const CardMovie = ({ film }) => {
                 name={"Рейтинг"}
                 name2={"иви"}
               />
-              {film.persons.slice(0, 4).map((el)=>(
+              {film.persons.slice(0, 4).map((el) => (
                 <div key={el.id}>
-                <Medallion 
-                 src={el.photo}
-                 name={el.name}
-                 
-               />
-               </div>
+                  <Medallion src={el.photo} name={el.name} />
+                </div>
               ))}
             </div>
             <div className={styles.card_description}>
@@ -166,9 +154,7 @@ const CardMovie = ({ film }) => {
               </p>
               <div className={styles.card_description_hiddenBox} ref={none}>
                 <p>
-                  {
-                    `Приглашаем посмотреть фильм «${film.name}» в нашем онлайн-кинотеатре совершенно бесплатно в хорошем HD качестве. Приятного просмотра!`
-                  }
+                  {`Приглашаем посмотреть фильм «${film.name}» в нашем онлайн-кинотеатре совершенно бесплатно в хорошем HD качестве. Приятного просмотра!`}
                 </p>
                 <div className={styles.card_description_box}>
                   <hr />
