@@ -53,7 +53,6 @@
   justify-content: center;
   .header_body {
     width: 1240px;
-    height: 100%;
     transform: translateY(4px);
     transition-duration: var(--menuTransition);
     --menuTransition: 250ms;
@@ -115,7 +114,6 @@
   .header_link_container {
     @extend .header_body;
     width: 1240px;
-    height: 460px;
     padding: 0px 12px 0px 12px;
     top: 0;
     opacity: 1;
@@ -145,7 +143,7 @@
         transition-duration: 80ms;
         z-index: 1;
       }
-      // Код для TV+ Drop Меню и участок кода с "Подписка Иви" для обоих участков 1
+      // Код для TV+ Drop Меню
       .header_channels_container {
         display: flex;
         flex-direction: column;
@@ -170,6 +168,10 @@
           font-weight: 500;
           line-height: 20px;
           color: #fff;
+        }
+        .tv_button:hover {
+          background-color: #3a3352;
+            border-color: #3a3352;
         }
       }
       .header_shows_container {
@@ -220,6 +222,9 @@
                   }
                 }
               }
+              .header_programs_overflow::-webkit-scrollbar {
+                display: none;
+              }
             }
             .header_programs:nth-child(2) {
               margin-top: 32px
@@ -241,9 +246,56 @@
               padding-right: 24px;
               margin-top: -12px;
               padding-top: 12px;
+              display: flex;
+              a {
+                cursor: pointer;
+                display: flex;
+                padding-right: 16px;
+                img {
+                  width: 58px;
+                  height: 38px;
+                  border-radius: 8px;
+                  margin-right: 15px;
+                }
+                .header_liveaction_text {
+                  .header_rivals {
+                    color: #d9d7e0;
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    max-height: 20px;
+                  }
+                  .header_liveaction_time {
+                    color: hsla(0,0%,100%,.48);
+                    font-size: 13px;
+                    font-weight: 400;
+                    height: 16px;
+                    line-height: 16px;
+                    margin-top: 2px;
+                    display: flex;
+                    span {
+                      display: flex;
+                      justify-content: center;
+                      width: 16px;
+                      height: 16px;
+                    }
+                  }
+                }
+              }
             }
           }
         }
+      }
+      // Код для Drop меню авторизации
+      .header_cards_container {
+        grid-gap: 24px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(4,minmax(155px,1fr));
+        grid-template-rows: repeat(2,auto);
+        padding-left: 12px;
+        padding-right: 12px;
+        width: 66.66666667%;
       }
       // Код для обычного Drop Меню
       .header_dropdown_genres {
@@ -447,6 +499,10 @@
               height: 20px;
               margin-right: 6px;
             }
+          }
+          a:hover {
+            background-color: #3a3352;
+            border-color: #3a3352;
           }
         }
       }

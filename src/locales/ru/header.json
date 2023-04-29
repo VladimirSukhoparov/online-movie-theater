@@ -11,7 +11,7 @@
         { "text": "Фильмы", "path": "/movies" },
         { "text": "Сериалы", "path": "/s" },
         { "text": "Мультфильмы", "path": "/" },
-        { "text": "TV+", "path": "/" }
+        { "text": "TV+", "path": "https://www.ivi.ru/tvplus" }
     ],
     "links_content": [
         {
@@ -152,24 +152,24 @@
     "tv_links": {
         "channels": [
             {
-                "text": "ТВ-каналы",
-                "url": ""
+              "text": "ТВ-каналы",
+              "url": "https://www.ivi.ru/tvplus"
             },
             {
-                "text": "Развлекательное",
-                "url": ""
+              "text": "Развлекательное",
+              "url": "https://www.ivi.ru/tvplus/razvlekatelnoe"
             },
             {
-                "text": "Дети",
-                "url": ""
+              "text": "Дети",
+              "url": "https://www.ivi.ru/tvplus/deti"
             },
             {
-                "text": "Спортивное ТВ",
-                "url": ""
+              "text": "Спортивное ТВ",
+              "url": "https://www.ivi.ru/tvplus/sport"
             },
             {
-                "text": "Докуменальное",
-                "url": ""
+              "text": "Докуменальное",
+              "url": "https://www.ivi.ru/tvplus/documentalnoe"
             }
         ],
         "federal_channels": [
@@ -244,6 +244,34 @@
                 "url": "https://www.ivi.ru/broadcast/7997",
                 "rivals": "УНИКС-Зенит",
                 "time": "Трансяция идет"
+            }
+        ]
+    },
+    "authorization_dropdown": {
+        "cards": [
+            {
+                "icon": "",
+                "text": ""
+            },
+            {
+                "icon": "",
+                "text": ""
+            },
+            {
+                "icon": "",
+                "text": ""
+            },
+            {
+                "icon": "",
+                "text": ""
+            },
+            {
+                "icon": "",
+                "text": ""
+            },
+            {
+                "icon": "",
+                "text": ""
             }
         ]
     }

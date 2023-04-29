@@ -19,7 +19,7 @@ const Button = (props) => {
   );
 
   return (
-    <button className={mainCn} type={props.type} onClick={props.onClick}>
+    <button className={mainCn} type={props.type} onClick={props.onClick} onMouseEnter={props.onMouseEnter}>
       {props.children}
     </button>
   );

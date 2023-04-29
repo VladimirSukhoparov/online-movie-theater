@@ -5,13 +5,19 @@
     "countries": "Countries",
     "years": "Years",
     "tv_program": "TV_program",
+    "header": [
+      {
+        "text": "Мой Иви",
+        "url": ""
+      }
+    ],
     "sections": [
         { "text": "My IVI", "path": "/" },
         { "text": "What's new", "path": "/" },
         { "text": "Movies", "path": "/" },
         { "text": "Series", "path": "/" },
         { "text": "Cartoons", "path": "/" },
-        { "text": "TV+", "path": "/" }
+        { "text": "TV+", "path": "https://www.ivi.ru/tvplus" }
     ],
     "links_content": [
         {
@@ -232,7 +238,7 @@
                 "url": ""
             }
         ],
-        "popular": [
+        "liveaction": [
             {
                 "src": "https://thumbs.dfs.ivi.ru/storage9/contents/3/6/7c3913447ae1b1c5e16ee7ae878a16.jpg/116x76//?q=85",
                 "url": ""
@@ -246,5 +252,33 @@
                 "url": ""
             }
         ]
-    }
+    },
+    "authorization_dropdown": {
+      "cards": [
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          }
+      ]
+  }
 }

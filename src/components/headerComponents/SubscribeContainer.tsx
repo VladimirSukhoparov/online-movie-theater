@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "../../styles/components/header/Header.module.scss"
 import Link from 'next/link';
+import { useLocale } from '../../hooks/useLocale';
 
 const scrollImages = [
     [
@@ -96,6 +97,7 @@ const scrollImages = [
   ]
 
 const SubscribeContainer = () => {
+  const translation = useLocale();
     return (
         <div className={styles.header_dropdown_sidecontent}>
             <div className={styles.header_sidecontent_subscribe}>
@@ -132,10 +134,10 @@ const SubscribeContainer = () => {
                     <img src="https://ruvod.com/wp-content/uploads/2022/09/Default.png" alt="" />
                     <div className={styles.posters_button_text}>
                     <span>
-                      Подписка Иви
+                      {translation.header.genres === "Жанры" ? "Подписка Иви" : "Subscribe Ivi"}
                     </span>
                     <p>
-                    От 199 ₽ за месяц
+                    {translation.header.genres === "Жанры" ? "От 199 ₽ за месяц" : "199 ₽ per month"}
                     </p>
                     </div>
                   </div>
@@ -143,7 +145,7 @@ const SubscribeContainer = () => {
               </div>
               <Link href="https://www.ivi.ru/pages/tvsmart/">
                 <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/tv.png"/>
-                Смотреть на SmartTV
+                {translation.header.genres === "Жанры" ? "Смотреть на SmartTV" : "Watch on SmartTV"}
               </Link>
             </div>
           </div>
