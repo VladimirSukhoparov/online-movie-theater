@@ -49,11 +49,10 @@ const Header = () => {
             </Link>
             <nav>
               <ul>
-                {translation.header.map((el, index) => {
+                {translation.header.sections.map((el, index) => {
                   return (
                     <Link
                       href={el.path}
-                      key={translation.header.indexOf(el)}
                       onMouseEnter={() => dpropdownMenu(index, 460)}
                     >
                       <li>{el.text}</li>
@@ -68,10 +67,10 @@ const Header = () => {
             <Button
               classN="header_subscribe"
               type="button"
-              children={translation.header_subscribe}
+              children={translation.header.subscribe}
             />
             <Link href="?ivi_search">
-              {translation.welcome === "добро пожаловать" ? "Поиск" : "Search"}
+              {translation.header.genres === "Жанры" ? "Поиск" : "Search"}
             </Link>
             <Button
               classN="header_notification"
@@ -82,7 +81,7 @@ const Header = () => {
               classN="header_login"
               type="button"
               children={<FontAwesomeIcon icon={faUser} />}
-              onMouseEnter={() => dpropdownMenu(7, 376)}
+              onMouseEnter={() => dpropdownMenu(7, 378)}
             />
           </div>
         </div>
@@ -92,12 +91,12 @@ const Header = () => {
             <hr />
             <div className={styles.header_dropdown_genres}>
               <div className={styles.header_title}>
-                {translation.welcome === "добро пожаловать"
+                {translation.header.genres === "Жанры"
                   ? "Жанры"
                   : "Genres"}
               </div>
               <ul>
-                {translation.header_links_content[focus - 2].genres.map(
+                {translation.header.links_content[focus - 2].genres.map(
                   (el) => {
                     return <li key={el.text}>{el.text}</li>;
                   }
@@ -107,12 +106,12 @@ const Header = () => {
             <div className={styles.header_dropdown_countriesandyears}>
               <div className={styles.header_country}>
                 <div className={styles.header_title}>
-                  {translation.welcome === "добро пожаловать"
+                  {translation.header.genres === "Жанры"
                     ? "Страны"
                     : "Countries"}
                 </div>
                 <ul>
-                  {translation.header_links_content[focus - 2].countries.map(
+                  {translation.header.links_content[focus - 2].countries.map(
                     (el) => {
                       return <li key={el.text}>{el.text}</li>;
                     }
@@ -121,12 +120,12 @@ const Header = () => {
               </div>
               <div className={styles.header_years}>
                 <div className={styles.header_title}>
-                  {translation.welcome === "добро пожаловать"
+                  {translation.header.genres === "Жанры"
                     ? "Годы"
                     : "Years"}
                 </div>
                 <ul>
-                  {translation.header_links_content[focus - 2].years.map(
+                  {translation.header.links_content[focus - 2].years.map(
                     (el) => {
                       return <li key={el.text}>{el.text}</li>;
                     }
@@ -143,7 +142,7 @@ const Header = () => {
                   ></div>
                 </div>
                 <ul>
-                  {translation.header_links_content[
+                  {translation.header.links_content[
                     focus - 2
                   ].recomandation.map((el, index) => {
                     if (sideHover === index) {
@@ -177,12 +176,12 @@ const Header = () => {
             <div className={styles.header_channels_container}>
               <div>
                 <div className={styles.header_title}>
-                  {translation.welcome === "добро пожаловать"
+                  {translation.header.genres === "Жанры"
                     ? "ТВ онлайн"
                     : "TV online"}
                 </div>
                 <ul>
-                  {translation.header_tv_links.channels.map((el) => {
+                  {translation.header.tv_links.channels.map((el) => {
                     return (
                       <li key={el.text}>
                         <Link href={el.url}>{el.text}</Link>
@@ -195,7 +194,7 @@ const Header = () => {
                 href="https://www.ivi.ru/tvplus/tv-schedule-today"
                 className={styles.tv_button}
               >
-                {translation.welcome === "добро пожаловать"
+                {translation.header.genres === "Жанры"
                   ? "Телепрограмма"
                   : "TV program"}
               </Link>
@@ -205,15 +204,15 @@ const Header = () => {
                 <div className={styles.header_programs_container}>
                   <div className={styles.header_programs}>
                     <div className={styles.header_programs_title}>
-                      {translation.welcome === "добро пожаловать"
+                      {translation.header.genres === "Жанры"
                         ? "Федеральные каналы"
                         : "Federal channels"}
                     </div>
                     <div className={styles.header_programs_overflow}>
-                      {translation.header_tv_links.federal_channels.map(
+                      {translation.header.tv_links.federal_channels.map(
                         (el) => {
                           return (
-                            <div className={styles.header_overflow}>
+                            <div className={styles.header_overflow} key={el.src}>
                               <img src={el.src} alt="IVI" />
                             </div>
                           );
@@ -223,12 +222,12 @@ const Header = () => {
                   </div>
                   <div className={styles.header_programs}>
                     <div className={styles.header_programs_title}>
-                      {translation.welcome === "добро пожаловать"
+                      {translation.header.genres === "Жанры"
                         ? "Спортивные каналы"
                         : "Sport channels"}
                     </div>
                     <div className={styles.header_programs_overflow}>
-                      {translation.header_tv_links.sport_channels.map((el) => {
+                      {translation.header.tv_links.sport_channels.map((el) => {
                         return (
                           <div className={styles.header_overflow}>
                             <img src={el.src} alt="IVI" />
@@ -239,12 +238,12 @@ const Header = () => {
                   </div>
                   <div className={styles.header_liveaction_container}>
                     <div className={styles.header_liveaction_title}>
-                      {translation.welcome === "добро пожаловать"
+                      {translation.header.genres === "Жанры"
                         ? "Популярные трансляции"
                         : "Popular broadcast"}
                     </div>
                     <div className={styles.header_liveaction_contant}>
-                      {translation.header_tv_links.liveaction.map((el) => {
+                      {translation.header.tv_links.liveaction.map((el) => {
                         return (
                           <Link href={el.url}>
                             <img src={el.src} alt="IVI" />
@@ -255,7 +254,7 @@ const Header = () => {
                               <div className={styles.header_liveaction_time}>
                                 {el.time}
                                 <span>•</span>
-                                {translation.welcome === "добро пожаловать"
+                                {translation.header.genres === "Жанры"
                                   ? "Общее"
                                   : "General"}
                               </div>
@@ -275,85 +274,8 @@ const Header = () => {
         {focus === 7 ? (
           <div className={styles.header_dropdown_container}>
             <hr />
-            <div className={styles.header_dropdown_genres}>
-              <div className={styles.header_title}>
-                {translation.welcome === "добро пожаловать"
-                  ? "Жанры"
-                  : "Genres"}
-              </div>
-              <ul>
-                {translation.header_links_content[focus - 2].genres.map(
-                  (el) => {
-                    return <li key={el.text}>{el.text}</li>;
-                  }
-                )}
-              </ul>
-            </div>
-            <div className={styles.header_dropdown_countriesandyears}>
-              <div className={styles.header_country}>
-                <div className={styles.header_title}>
-                  {translation.welcome === "добро пожаловать"
-                    ? "Страны"
-                    : "Countries"}
-                </div>
-                <ul>
-                  {translation.header_links_content[focus - 2].countries.map(
-                    (el) => {
-                      return <li key={el.text}>{el.text}</li>;
-                    }
-                  )}
-                </ul>
-              </div>
-              <div className={styles.header_years}>
-                <div className={styles.header_title}>
-                  {translation.welcome === "добро пожаловать"
-                    ? "Годы"
-                    : "Years"}
-                </div>
-                <ul>
-                  {translation.header_links_content[focus - 2].years.map(
-                    (el) => {
-                      return <li key={el.text}>{el.text}</li>;
-                    }
-                  )}
-                </ul>
-              </div>
-            </div>
-            <div className={styles.header_dropdown_sidecontent}>
-              <div className={styles.header_sidecontent_recomandation}>
-                <div className={styles.header_recomandation_scroll}>
-                  <div
-                    className={styles.header_scroll}
-                    style={{
-                      margin: `${sideScroll}px 0px 0px 0px`,
-                    }}
-                  ></div>
-                </div>
-                <ul>
-                  {translation.header_links_content[
-                    focus - 2
-                  ].recomandation.map((el, index) => {
-                    if (sideHover === index) {
-                      return (
-                        <li
-                          key={el.text}
-                          onMouseEnter={() => scroll(index)}
-                          style={{ color: "white" }}
-                        >
-                          {el.text}
-                        </li>
-                      );
-                    } else {
-                      return (
-                        <li key={el.text} onMouseEnter={() => scroll(index)}>
-                          {el.text}
-                        </li>
-                      );
-                    }
-                  })}
-                </ul>
-              </div>
-              <SubscribeContainer />
+            <div className={styles.header_cards_container}>
+
             </div>
           </div>
         ) : null}

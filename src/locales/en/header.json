@@ -1,9 +1,17 @@
 {
-    "locale-name_en": "Eng",
-    "locale-name_ru": "Ru",
-    "welcome": "",
-    "header_subscribe": "Watch 30 days for 1 ₽",
+    "subscribe": "Watch 30 days for 1 ₽",
+    "notification": "Only important messages appear here",
+    "genres": "Genres",
+    "countries": "Countries",
+    "years": "Years",
+    "tv_program": "TV_program",
     "header": [
+      {
+        "text": "Мой Иви",
+        "url": ""
+      }
+    ],
+    "sections": [
         { "text": "My IVI", "path": "/" },
         { "text": "What's new", "path": "/" },
         { "text": "Movies", "path": "/" },
@@ -11,7 +19,7 @@
         { "text": "Cartoons", "path": "/" },
         { "text": "TV+", "path": "https://www.ivi.ru/tvplus" }
     ],
-    "header_links_content": [
+    "links_content": [
         {
             "genres": [
                 { "text": "Arthouse", "url": "" },
@@ -146,184 +154,131 @@
                 { "text": "СТС Kids cartoons" }
             ]
         }
-           
     ],
-    "header_tv_links": {
+    "tv_links": {
         "channels": [
             {
-              "text": "TV-channels",
-              "url": ""
+                "text": "ТВ-каналы",
+                "url": ""
             },
             {
-              "text": "Entertaining",
-              "url": ""
+                "text": "Развлекательное",
+                "url": ""
             },
             {
-              "text": "For kids",
-              "url": ""
+                "text": "Дети",
+                "url": ""
             },
             {
-              "text": "Sport TV",
-              "url": ""
+                "text": "Спортивное ТВ",
+                "url": ""
             },
             {
-              "text": "Documentary",
-              "url": ""
+                "text": "Докуменальное",
+                "url": ""
             }
-          ],
-          "federal_channels": [
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage2/contents/5/5/f1e86a30aa3728b2b939bb60a3e204.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage23/contents/5/e/24b2db1593647813cc3189270023e8.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage39/contents/6/3/94247f8de64c29e262c4cb828bbd40.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage4/contents/2/3/c3862f7e847f614447a942101fa6ea.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage28/contents/4/7/5257a323a5973d1fba6c2c7c732df5.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage37/contents/6/2/0c7666fb8fe6e9212642e35a4cab79.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage39/contents/3/f/539284adaee9d9295f74bd00f01926.jpg/182x118//?q=85",
-              "url": ""
-            }
-          ],
-          "sport_channels": [
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage6/contents/5/9/4fa4866036f6fe0e6fc7c58fca95c2.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage3/contents/3/2/4e4d68075ba795577fa382d103c9b2.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage2/contents/b/f/3877f4b24f1e88c7d71b8bdd6332c9.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage31/contents/2/2/13fb97b2e454ae0bc0e45ef07b2ffc.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage28/contents/0/b/8636562ba22dae82bb74dda8ab630c.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage31/contents/9/8/93f16bed265ece28ac71d41fc57350.jpg/182x118//?q=85",
-              "url": ""
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage23/contents/4/2/48ff532cc07704f5510b5f24ff384a.jpg/182x118//?q=85",
-              "url": ""
-            }
-          ],
-          "liveaction": [
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage9/contents/3/6/7c3913447ae1b1c5e16ee7ae878a16.jpg/116x76//?q=85",
-              "url": "https://www.ivi.ru/broadcast/7989",
-              "rivals": "УНИКС-Зенит",
-              "time": "Live on"
-            },
-            {
-              "src": "https://thumbs.dfs.ivi.ru/storage28/contents/e/e/63a0dfe3154fdced24eca8d61a0810.jpg/116x76//?q=85",
-              "url": "https://www.ivi.ru/broadcast/7997",
-              "rivals": "УНИКС-Зенит",
-              "time": "Live on"
-            }
-          ]
-    },
-    "footer_ul": [
-        [
-            "About us",
-            "About company",
-            "Vacancies",
-            "Beta test program",
-            "Information for partners",
-            "Advertizing placement",
-            "Terms of use",
-            "Privacy policy",
-            "Compliance"
         ],
-        [
-            "Sections",
-            "My IVI",
-            "What's new",
-            "Movies",
-            "Series",
-            "Cartoons",
-            "TV+",
-            "What to see",
-            "Certificate activation"
+        "federal_channels": [
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage2/contents/5/5/f1e86a30aa3728b2b939bb60a3e204.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage23/contents/5/e/24b2db1593647813cc3189270023e8.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage39/contents/6/3/94247f8de64c29e262c4cb828bbd40.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage4/contents/2/3/c3862f7e847f614447a942101fa6ea.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage28/contents/4/7/5257a323a5973d1fba6c2c7c732df5.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage37/contents/6/2/0c7666fb8fe6e9212642e35a4cab79.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage39/contents/3/f/539284adaee9d9295f74bd00f01926.jpg/182x118//?q=85",
+                "url": ""
+            }
+        ],
+        "sport_channels": [
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage6/contents/5/9/4fa4866036f6fe0e6fc7c58fca95c2.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage3/contents/3/2/4e4d68075ba795577fa382d103c9b2.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage2/contents/b/f/3877f4b24f1e88c7d71b8bdd6332c9.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage31/contents/2/2/13fb97b2e454ae0bc0e45ef07b2ffc.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage28/contents/0/b/8636562ba22dae82bb74dda8ab630c.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage31/contents/9/8/93f16bed265ece28ac71d41fc57350.jpg/182x118//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage23/contents/4/2/48ff532cc07704f5510b5f24ff384a.jpg/182x118//?q=85",
+                "url": ""
+            }
+        ],
+        "liveaction": [
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage9/contents/3/6/7c3913447ae1b1c5e16ee7ae878a16.jpg/116x76//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage28/contents/e/e/63a0dfe3154fdced24eca8d61a0810.jpg/116x76//?q=85",
+                "url": ""
+            },
+            {
+                "src": "https://thumbs.dfs.ivi.ru/storage30/contents/2/6/e50e3f2262dd3046fc4a68ceb109c1.jpg/116x76//?q=85",
+                "url": ""
+            }
         ]
-    ],
-    "footer_third_title": "Support",
-    "footer_third_span": "We are always ready to help you. Our operators are online 24/7",
-    "footer_third_button": "Comment in chat",
-    "footer_third_p": "Answers on questions",
-    "footer_fourth": "Watch movies, series and cartoons without ads",
-    "footer_second_ul": [
-        {
-            "img": "https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/appleLogo.svg",
-            "p": "Upload to",
-            "text": "App Store"
-        },
-        {
-            "img": "https://solea-parent.dfs.ivi.ru/picture/ffffff,ffffff/googlePlayLogo.svg",
-            "p": "Available in",
-            "text": "Google Play"
-        },
-        {
-            "img": "https://img.icons8.com/sf-black-filled/64/FFFFFF/tv.png",
-            "p": "Look at",
-            "text": "Smart TV"
-        },
-        {
-            "img": "https://img.icons8.com/ios/50/FFFFFF/multiple-devices.png",
-            "text": "All devices"
-        }
-    ],
-    "footer_mobile": [
-        {
-            "text": "My IVI",
-            "path": "/",
-            "img": "https://static.vecteezy.com/system/resources/previews/013/743/156/non_2x/white-house-icon-png.png"
-        },
-        {
-            "text": "Catalog",
-            "path": "/",
-            "img": "https://img.icons8.com/ios-glyphs/30/FFFFFF/folder-invoices--v1.png"
-        },
-        {
-            "text": "Search",
-            "path": "/",
-            "img": "https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png"
-        },
-        {
-            "text": "TV+",
-            "path": "/",
-            "img": "https://img.icons8.com/ios-glyphs/30/FFFFFF/tv.png"
-        },
-        {
-            "text": "More",
-            "path": "/",
-            "img": "https://img.icons8.com/ios-filled/50/FFFFFF/more.png"
-        }
-    ],
-    "of_the_week": "of the week",
-    "show_selection": "Show selection",
-    "header_notification": "Only important messages appear here"
+    },
+    "authorization_dropdown": {
+      "cards": [
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          },
+          {
+              "icon": "",
+              "text": ""
+          }
+      ]
+  }
 }

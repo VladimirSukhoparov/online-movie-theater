@@ -134,10 +134,10 @@ const SubscribeContainer = () => {
                     <img src="https://ruvod.com/wp-content/uploads/2022/09/Default.png" alt="" />
                     <div className={styles.posters_button_text}>
                     <span>
-                      {translation.welcome === "добро пожаловать" ? "Подписка Иви" : "Subscribe Ivi"}
+                      {translation.header.genres === "Жанры" ? "Подписка Иви" : "Subscribe Ivi"}
                     </span>
                     <p>
-                    {translation.welcome === "добро пожаловать" ? "От 199 ₽ за месяц" : "199 ₽ per month"}
+                    {translation.header.genres === "Жанры" ? "От 199 ₽ за месяц" : "199 ₽ per month"}
                     </p>
                     </div>
                   </div>
@@ -145,7 +145,7 @@ const SubscribeContainer = () => {
               </div>
               <Link href="https://www.ivi.ru/pages/tvsmart/">
                 <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/tv.png"/>
-                {translation.welcome === "добро пожаловать" ? "Смотреть на SmartTV" : "Watch on SmartTV"}
+                {translation.header.genres === "Жанры" ? "Смотреть на SmartTV" : "Watch on SmartTV"}
               </Link>
             </div>
           </div>
