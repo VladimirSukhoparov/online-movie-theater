@@ -256,28 +256,44 @@
     "authorization_dropdown": {
       "cards": [
           {
-              "icon": "",
-              "text": ""
+              "url": "https://www.ivi.ru/profile/purchases",
+              "icon": "https://img.icons8.com/external-tal-revivo-bold-tal-revivo/24/737373/external-remove-unwanted-webpage-tabs-of-a-web-browser-landing-bold-tal-revivo.png",
+              "text": "Purchases"
           },
           {
-              "icon": "",
-              "text": ""
+              "url": "https://www.ivi.ru/profile/favorites",
+              "icon": "https://img.icons8.com/ios-glyphs/30/737373/bookmark-ribbon.png",
+              "text": "Watch later"
           },
           {
-              "icon": "",
-              "text": ""
+              "url": "https://www.ivi.ru/profile/watched",
+              "icon": "https://img.icons8.com/material-outlined/24/737373/time-machine.png",
+              "text": "Browsing history"
           },
           {
-              "icon": "",
-              "text": ""
+              "url": "https://www.ivi.ru/profile/subscriptions",
+              "icon": "https://img.icons8.com/ios-filled/50/737373/diamond--v1.png",
+              "text": "Subscription"
           },
           {
-              "icon": "",
-              "text": ""
+              "url": "https://www.ivi.ru/profile/cards",
+              "icon": "https://img.icons8.com/glyph-neue/64/737373/prize--v1.png",
+              "text": "Certificate actiovation"
           },
           {
-              "icon": "",
-              "text": ""
+              "url": "https://www.ivi.ru/profile/cards",
+              "icon": "https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/737373/external-tv-network-and-communication-smashingstocks-glyph-smashing-stocks-2.png",
+              "text": "Enter by code"
+          },
+          {
+              "url": "https://www.ivi.ru/profile/cards",
+              "icon": "https://img.icons8.com/ios-filled/50/737373/bank-card-back-side.png",
+              "text": "Payment methods"
+          },
+          {
+              "url": "https://www.ivi.ru/profile/referral",
+              "icon": "https://img.icons8.com/material-sharp/24/737373/share.png",
+              "text": "Invite friends"
           }
       ]
   }
