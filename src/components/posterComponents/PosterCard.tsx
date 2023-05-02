@@ -3,7 +3,7 @@ import { faBookmark, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faWandMagicSparkles, faBan } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../styles/components/posterComponents/PosterCard.module.scss";
 import ProgressBar from "./ProgressBar";
-import PromptIcon from "./PromptIcon";
+import TooltipIcon from "./TooltipIcon";
 import Link from "next/link";
 
 interface PosterCardProps {
@@ -34,10 +34,12 @@ const PosterCard: FC<PosterCardProps> = ({
   charts,
 }) => {
   const [integerRating, fractionalRating] = rating.split(",");
+
   const panelRef = useRef(null);
   const imgRef = useRef(null);
   const titleRef = useRef(null);
   const mainRef = useRef(null);
+
   const onMouseEnter = () => {
     panelRef.current.style.visibility = "visible";
     panelRef.current.style.opacity = 1;
@@ -45,6 +47,7 @@ const PosterCard: FC<PosterCardProps> = ({
     titleRef.current.classList.add(styles.title_hover);
     mainRef.current.classList.add(styles.main_hover);
   };
+
   const onMouseLeave = () => {
     panelRef.current.style.visibility = "hidden";
     panelRef.current.style.opacity = 0;
@@ -52,6 +55,7 @@ const PosterCard: FC<PosterCardProps> = ({
     titleRef.current.classList.remove(styles.title_hover);
     mainRef.current.classList.remove(styles.main_hover);
   };
+
   return (
     <Link onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} href={link}>
       <div className={styles.container}>
@@ -62,10 +66,10 @@ const PosterCard: FC<PosterCardProps> = ({
           </div>
           <div ref={panelRef} className={styles.main__panel}>
             <div className={styles.main__icons}>
-              <PromptIcon icon={faBookmark} prompt={"Смотреть позже"} />
-              <PromptIcon icon={faWandMagicSparkles} prompt={"Похожее"} />
-              <PromptIcon icon={faStar} prompt={"Уже смотрел, оценить"} />
-              <PromptIcon icon={faBan} prompt={"Не нравится такое"} />
+              <TooltipIcon icon={faBookmark} text={"Смотреть позже"} />
+              <TooltipIcon icon={faWandMagicSparkles} text={"Похожее"} />
+              <TooltipIcon icon={faStar} text={"Уже смотрел, оценить"} />
+              <TooltipIcon icon={faBan} text={"Не нравится такое"} />
             </div>
             <div className={styles.main__info}>
               <div className={styles.rating}>
