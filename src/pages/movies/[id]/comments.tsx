@@ -2,7 +2,7 @@ import React from "react";
 import MovieDetails from "../../../components/movieComponents/MovieDetails";
 
 const Comments = ({ id }) => {
-    return <MovieDetails id={id}>comments</MovieDetails>;
+    return <MovieDetails id={id} page={'comments'}>comments</MovieDetails>;
 };
 
 export default Comments;

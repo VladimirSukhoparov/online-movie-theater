@@ -26,7 +26,7 @@ const Person = ({ id }) => {
     );
 
     return (
-        <MovieDetails id={id}>
+        <MovieDetails id={id} page={'person'}>
             <div className={styles.container}>
                 <p className={styles.container_title}>{translation.title=="Actors and creators"?director.enProfession.replace( 'd', "D" ):director.profession.replace( 'р', "Р" ).slice(0,-1)}</p>
                 <div className={styles.container_content}>

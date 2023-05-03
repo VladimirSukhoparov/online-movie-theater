@@ -8,9 +8,9 @@ import TrailersMovie from "../../../components/movieComponents/TrailersMovie";
 const Trailers = ({ id }) => {
     const trailers = film.videos.trailers;
     return (
-        <MovieDetails id={id}>
-            <TrailersMovie />
-        </MovieDetails>
+      <MovieDetails id={id} page={'trailers'}> 
+            <TrailersMovie />      
+     </MovieDetails> 
     );
 };
 

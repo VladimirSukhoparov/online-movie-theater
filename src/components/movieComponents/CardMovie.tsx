@@ -10,6 +10,7 @@ import {
     faVolumeUp,
     faClosedCaptioning,
     faXmark,
+    faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { useLocale } from "../../hooks/useLocale";
 import Link from "next/link";
@@ -46,35 +47,170 @@ const CardMovie = ({ film }) => {
     };
 
     const hidden = useRef(null);
-    const show = useRef(null);
+    const showDetail = useRef(null);
+    const hideDetail = useRef(null);
+    const readMore = useRef(null);
     const hide = useRef(null);
     const none = useRef(null);
+
 
     const showBox = () => {
         hidden.current.style.display = "block";
         none.current.style.display = "block";
-        hide.current.style.display = "block";
-        show.current.style.display = "none";
+        hideDetail.current.style.display = "block";
+        showDetail.current.style.display = "none";
     };
 
     const hideBox = () => {
         hidden.current.style.display = "-webkit-box";
-        show.current.style.display = "block";
+        showDetail.current.style.display = "block";
+        none.current.style.display = "none";
+        hideDetail.current.style.display = "none";
+    };
+
+    const showMobile = () => {
+        hidden.current.style.display = "block";
+        none.current.style.display = "block";
+        hide.current.style.display = "block";
+        readMore.current.style.display = "none";
+    };
+
+    const hideMobile = () => {
+        hidden.current.style.display = "-webkit-box";
+        readMore.current.style.display = "block";
         none.current.style.display = "none";
         hide.current.style.display = "none";
     };
 
     return (
         <>
+            <div className={styles.header}>
+                <Link href={`/movies`} className={styles.header_btn}>
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                    <p>{translation.button}</p>
+                </Link>
+            </div>
             <div className={styles.card}>
                 <div className={styles.card_container}>
                     <div className={styles.card_player}>
+                        <div className={styles.card_mobile}>
+                            <p
+                                className={styles.card_mobile_title}
+                            >{`${film.name} (${translation.title} ${film.year})`}</p>
+                            <div className={styles.card_mobile_params}>
+                                <ul className={styles.card_mobile_paramsList}>
+                                    <li
+                                        className={
+                                            styles.card_mobile_paramsLink
+                                        }
+                                    >
+                                        <Link href={film.name}>
+                                            {film.year}
+                                        </Link>
+                                    </li>
+                                    <li
+                                        className={
+                                            styles.card_mobile_paramsDuration
+                                        }
+                                    >
+                                        2 {translation.hour} 12{" "}
+                                        {translation.minutes}
+                                    </li>
+                                    <li
+                                        className={
+                                            styles.card_mobile_paramsDuration
+                                        }
+                                    >
+                                        16+
+                                    </li>
+                                </ul>
+                                <ul className={styles.card_mobile_paramsList}>
+                                    {film.countries.map((el) => (
+                                        <li
+                                            className={
+                                                styles.card_mobile_paramsLink
+                                            }
+                                            key={el.name}
+                                        >
+                                            <Link href={el.name}>
+                                                {el.name}
+                                            </Link>
+                                            {film.countries.indexOf(el) !==
+                                                film.countries.length - 1 && (
+                                                <span
+                                                    className={
+                                                        styles.card_mobile_paramsPoint
+                                                    }
+                                                >
+                                                    &#183;
+                                                </span>
+                                            )}
+                                        </li>
+                                    ))}
+
+                                    {film.genres.map((el) => (
+                                        <li
+                                            className={
+                                                styles.card_mobile_paramsLink
+                                            }
+                                            key={el.name}
+                                        >
+                                            <span
+                                                className={
+                                                    styles.card_mobile_paramsPoint
+                                                }
+                                            >
+                                                &#183;
+                                            </span>
+                                            <Link href={el.name}>
+                                                {el.name.replace(
+                                                    el.name[0],
+                                                    el.name[0].toUpperCase()
+                                                )}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <ul className={styles.card_mobile_paramsList}>
+                                    <li
+                                        className={
+                                            styles.card_mobile_paramsItem
+                                        }
+                                    >
+                                        <p>FullHD</p>
+                                    </li>
+                                    <li
+                                        className={
+                                            styles.card_mobile_paramsItem
+                                        }
+                                    >
+                                        <FontAwesomeIcon icon={faVolumeUp} />
+                                        {translation.voiceLanguage}
+                                        <span
+                                            className={
+                                                styles.card_mobile_paramsPoint
+                                            }
+                                        >
+                                            &#183;
+                                        </span>
+                                        Eng
+                                        <FontAwesomeIcon
+                                            icon={faClosedCaptioning}
+                                        />
+                                        {translation.preSubtitles}
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
                         <div className={styles.card_movie}>
                             <Player
                                 url={
                                     "https://www.youtube.com/watch?v=zwpV5grj0Sk"
                                 }
-                                src={'https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/45e33bc3-b553-4873-9d04-f73e9fdc7741/1920x'}
+                                src={
+                                    "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/45e33bc3-b553-4873-9d04-f73e9fdc7741/1920x"
+                                }
                             />
                         </div>
                         <div className={styles.card_user_btn}>
@@ -108,32 +244,52 @@ const CardMovie = ({ film }) => {
                         </div>
                     </div>
                     <div className={styles.card_info}>
-                        <p className={styles.card_title}>{film.name}</p>
-                        <p className={styles.card_title}>
-                            ({translation.title} {film.year})
-                        </p>
-                        <div className={styles.card_params}>
-                            <ul className={styles.card_paramsList}>
-                                <li className={styles.card_paramsLink}>
-                                    <Link href={film.name}>{film.year}</Link>
-                                </li>
-                                <li className={styles.card_paramsDuration}>
-                                    2 {translation.hour} 12{" "}
-                                    {translation.minutes}
-                                </li>
-                                <li className={styles.card_paramsDuration}>
-                                    16+
-                                </li>
-                            </ul>
-                            <ul className={styles.card_paramsList}>
-                                {film.countries.map((el) => (
-                                    <li
-                                        className={styles.card_paramsLink}
-                                        key={el.name}
-                                    >
-                                        <Link href={el.name}>{el.name}</Link>
-                                        {film.countries.indexOf(el) !==
-                                            film.countries.length - 1 && (
+                        <div className={styles.card_screen}>
+                            <p
+                                className={styles.card_title}
+                            >{`${film.name} (${translation.title} ${film.year})`}</p>
+                            <div className={styles.card_params}>
+                                <ul className={styles.card_paramsList}>
+                                    <li className={styles.card_paramsLink}>
+                                        <Link href={film.name}>
+                                            {film.year}
+                                        </Link>
+                                    </li>
+                                    <li className={styles.card_paramsDuration}>
+                                        2 {translation.hour} 12{" "}
+                                        {translation.minutes}
+                                    </li>
+                                    <li className={styles.card_paramsDuration}>
+                                        16+
+                                    </li>
+                                </ul>
+                                <ul className={styles.card_paramsList}>
+                                    {film.countries.map((el) => (
+                                        <li
+                                            className={styles.card_paramsLink}
+                                            key={el.name}
+                                        >
+                                            <Link href={el.name}>
+                                                {el.name}
+                                            </Link>
+                                            {film.countries.indexOf(el) !==
+                                                film.countries.length - 1 && (
+                                                <span
+                                                    className={
+                                                        styles.card_paramsPoint
+                                                    }
+                                                >
+                                                    &#183;
+                                                </span>
+                                            )}
+                                        </li>
+                                    ))}
+
+                                    {film.genres.map((el) => (
+                                        <li
+                                            className={styles.card_paramsLink}
+                                            key={el.name}
+                                        >
                                             <span
                                                 className={
                                                     styles.card_paramsPoint
@@ -141,47 +297,36 @@ const CardMovie = ({ film }) => {
                                             >
                                                 &#183;
                                             </span>
-                                        )}
+                                            <Link href={el.name}>
+                                                {el.name.replace(
+                                                    el.name[0],
+                                                    el.name[0].toUpperCase()
+                                                )}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <ul className={styles.card_paramsList}>
+                                    <li className={styles.card_paramsItem}>
+                                        <p>FullHD</p>
                                     </li>
-                                ))}
-
-                                {film.genres.map((el) => (
-                                    <li
-                                        className={styles.card_paramsLink}
-                                        key={el.name}
-                                    >
+                                    <li className={styles.card_paramsItem}>
+                                        <FontAwesomeIcon icon={faVolumeUp} />
+                                        {translation.voiceLanguage}
                                         <span
                                             className={styles.card_paramsPoint}
                                         >
                                             &#183;
                                         </span>
-                                        <Link href={el.name}>
-                                            {el.name.replace(
-                                                el.name[0],
-                                                el.name[0].toUpperCase()
-                                            )}
-                                        </Link>
+                                        Eng
+                                        <FontAwesomeIcon
+                                            icon={faClosedCaptioning}
+                                        />
+                                        {translation.preSubtitles}
                                     </li>
-                                ))}
-                            </ul>
-                            <ul className={styles.card_paramsList}>
-                                <li className={styles.card_paramsItem}>
-                                    <p>FullHD</p>
-                                </li>
-                                <li className={styles.card_paramsItem}>
-                                    <FontAwesomeIcon icon={faVolumeUp} />
-                                    {translation.voiceLanguage}
-                                    <span className={styles.card_paramsPoint}>
-                                        &#183;
-                                    </span>
-                                    Eng
-                                    <FontAwesomeIcon
-                                        icon={faClosedCaptioning}
-                                    />
-                                    {translation.preSubtitles}
-                                </li>
-                                <li></li>
-                            </ul>
+                                    <li></li>
+                                </ul>
+                            </div>
                         </div>
                         <div className={styles.card_medallions}>
                             <Medallion
@@ -190,12 +335,48 @@ const CardMovie = ({ film }) => {
                                 )}
                                 name={translation.rating}
                                 name2={translation.ivi}
-                            />
+                                open={openModal}/>
                             {film.persons.slice(0, 4).map((el) => (
                                 <div key={el.id}>
-                                    <Medallion src={el.photo} name={translation.title=='Movie'?el.enName:el.name} />
+                                    <Medallion
+                                        src={el.photo}
+                                        name={
+                                            translation.title == "Movie"
+                                                ? el.enName
+                                                : el.name
+                                        }
+                                    />
                                 </div>
                             ))}
+                        </div>
+                        <div className={styles.card_mobile_user_btn}>
+                            <Button
+                                classN="trailer_mobile"
+                                type="button"
+                                children={
+                                    <Link
+                                        href={film.videos.trailers[0].url}
+                                        target={"_blank"}
+                                    >
+                                        <FontAwesomeIcon icon={faPlay} />
+                                        <p>{translation.trailer}</p>
+                                    </Link>
+                                }
+                            />
+                            <Button
+                                classN="bookmark_mobile"
+                                type="button"
+                                children={<FontAwesomeIcon icon={faBookmark} />}
+                            />
+                            <Button
+                                classN="share_mobile"
+                                type="button"
+                                children={
+                                    <FontAwesomeIcon
+                                        icon={faArrowUpFromBracket}
+                                    />
+                                }
+                            />
                         </div>
                         <div className={styles.card_description}>
                             <p
@@ -232,14 +413,14 @@ const CardMovie = ({ film }) => {
                                             styles.card_description_boxTitle
                                         }
                                     >
-                                        {translation.languages}
+                                        {translation.subtitles}
                                     </p>
                                     <p
                                         className={
                                             styles.card_description_boxText
                                         }
                                     >
-                                        {translation.language}
+                                        {translation.subtitle}
                                     </p>
                                     <p
                                         className={
@@ -310,18 +491,33 @@ const CardMovie = ({ film }) => {
                                 </div>
                             </div>
                             <span
-                                className={styles.card_description_show}
-                                ref={show}
+                                className={styles.card_description_showDetail}
+                                ref={showDetail}
                                 onClick={showBox}
                             >
                                 {translation.showDetail}
                             </span>
                             <span
-                                className={styles.card_description_hide}
-                                ref={hide}
+                                className={styles.card_description_hideDetail}
+                                ref={hideDetail}
                                 onClick={hideBox}
                             >
                                 {translation.hideDetail}
+                            </span>
+
+                            <span
+                                className={styles.card_mobile_description_show}
+                                ref={readMore}
+                                onClick={showMobile}
+                            >
+                                {translation.readMore}
+                            </span>
+                            <span
+                                className={styles.card_mobile_description_hide}
+                                ref={hide}
+                                onClick={hideMobile}
+                            >
+                                {translation.hide}
                             </span>
                         </div>
                         <div className={styles.card_rating} onClick={openModal}>
@@ -370,9 +566,126 @@ const CardMovie = ({ film }) => {
                                 />
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
+            <div className={styles.card_mobile_container}>
+                            <div
+                                className={styles.card_mobile_rating}
+                                onClick={openModal}
+                            >
+                                <div className={styles.card_mobile_rating_box}>
+                                    <div
+                                        className={
+                                            styles.card_mobile_rating_boxNum
+                                        }
+                                    >
+                                        {(
+                                            Math.round(count * 100) / 100
+                                        ).toFixed(1)}
+                                    </div>
+                                    <ul>
+                                        <li
+                                            className={
+                                                styles.card_mobile_rating_boxTitle
+                                            }
+                                        >
+                                            {translation.rating}{" "}
+                                            {translation.ivi}
+                                        </li>
+                                        <li
+                                            className={
+                                                styles.card_mobile_rating_boxCaption
+                                            }
+                                        >
+                                            {translation.plot}
+                                        </li>
+                                    </ul>
+                                    <Button
+                                        classN="rating"
+                                        type="button"
+                                        children={translation.evaluation}
+                                    />
+                                </div>
+                            </div>
+                            <div className={styles.card_mobile_description_box}>
+                            <div className={styles.card_mobile_description_lang}>
+                                    <p>
+                                        {translation.languages}
+                                    </p>
+                                    <p>
+                                        {translation.language}
+                                    </p>
+                                    </div>
+                                    <hr />
+                                    <div className={styles.card_mobile_description_lang}>
+                                    <p>
+                                        {translation.subtitles}
+                                    </p>
+                                    <p>
+                                        {translation.subtitle}
+                                    </p>
+                                    </div>
+                                    <hr />
+                                    <div className={styles.card_mobile_description_lang}>
+                                    <p>
+                                        {translation.qualityMobile}
+                                    </p>
+                                    <ul>
+                                        <li
+                                            className={
+                                                styles.card_mobile_description_item
+                                            }
+                                        >
+                                            <p>4K</p>
+                                        </li>
+                                        <li
+                                            className={
+                                                styles.card_mobile_description_item
+                                            }
+                                        >
+                                            <p>FullHD</p>
+                                        </li>
+                                        <li
+                                            className={
+                                                styles.card_mobile_description_item
+                                            }
+                                        >
+                                            <p>HD</p>
+                                        </li>
+                                        <li
+                                            className={
+                                                styles.card_mobile_description_item
+                                            }
+                                        >
+                                            <p>1080</p>
+                                        </li>
+                                        <li
+                                            className={
+                                                styles.card_mobile_description_item
+                                            }
+                                        >
+                                            <p>720</p>
+                                        </li>
+                                        <li
+                                            className={
+                                                styles.card_mobile_description_item
+                                            }
+                                        >
+                                            <p>HDR10</p>
+                                        </li>
+                                        <li
+                                            className={
+                                                styles.card_mobile_description_item
+                                            }
+                                        >
+                                            <p>5.1</p>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>∏
+                        </div>
             <Modal
                 isOpen={isOpen}
                 onRequestClose={closeModal}
