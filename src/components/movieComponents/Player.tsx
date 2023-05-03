@@ -6,10 +6,11 @@ const Player = (props) => {
         <ReactPlayer
             url={props.url}
             width="100%"
-            light={<img src={props.src} alt="" width="100%" />}
+            height="auto"
+            light={<img src={props.src} alt="" width="100%" height="100%"/>}
         />
     ) : (
-        <ReactPlayer url={props.url} width="100%" />
+        <ReactPlayer url={props.url} width="100%" height="auto"/>
     );
 };
 

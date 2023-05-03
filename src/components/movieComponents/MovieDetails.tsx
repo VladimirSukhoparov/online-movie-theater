@@ -6,11 +6,11 @@ import films from "../../../public/data/example.json";
 import styles from "../../styles/components/movieComponents/MovieDetails.module.scss";
 import { useLocale } from "../../hooks/useLocale";
 
-import ProgressBar from "../posterComponents/ProgressBar";
 
-const MovieDetails = ({ children, id }) => {
+const MovieDetails = (props) => {
     const { movieDetails: translation } = useLocale();
-    const [isVisible, setIsVisible] = useState("person");
+    const [isVisible, setIsVisible] = useState(props.page);
+   
     const film = films;
     const items = [
         { id: 1, name: translation.creators, href: "person" },
@@ -21,7 +21,7 @@ const MovieDetails = ({ children, id }) => {
     return (
         <div className={styles.container}>
             <div className={styles.content}>
-                <Link href={`/movies/${id}`} className={styles.content_back}>
+                <Link href={`/movies/${props.id}`} className={styles.content_back}>
                     <FontAwesomeIcon icon={faChevronLeft} />
                     <p>{translation.button}</p>
                 </Link>
@@ -38,13 +38,13 @@ const MovieDetails = ({ children, id }) => {
                                 <li
                                     onClick={() => setIsVisible(el.href)}
                                     key={el.id}
-                                    /* className={
+                                     className={
                                         isVisible === el.href
                                             ? styles.active
                                             : null
-                                    } */
+                                    }
                                 >
-                                    <Link href={`/movies/${id}/${el.href}`}>
+                                    <Link href={`/movies/${props.id}/${el.href}`}>
                                         {el.name}
                                         
                                        
@@ -54,11 +54,13 @@ const MovieDetails = ({ children, id }) => {
                             ))}
                         </ul>
                         <hr />
-                        <div>{children}</div>
+                        <div>
+                            {props.children}
+                            </div>
                     </div>
 
                     <div className={styles.movie_poster}>
-                        <Link href={`/movies/${id}`}>
+                        <Link href={`/movies/${props.id}`}>
                         <img src={film.poster.previewUrl} alt="" />
                         </Link>
                         <div className={styles.movie_info}>

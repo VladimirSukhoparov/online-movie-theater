@@ -9,13 +9,15 @@ import styles from "../../styles/pages/[id].module.scss";
 import TrailersMovie from "../../components/movieComponents/TrailersMovie";
 
 const Movie = ({ id }) => {
+  
+  
   return (
     <div className={styles.movie}>
-      <CardMovie film={film.id == id && film} />
-      <RelatedList film={film.id == id && film} />
-      <CreatorsList film={film.id == id && film} />
+      <CardMovie film={ film} />
+      <RelatedList film={ film} />
+      <CreatorsList film={film} id={id}/>
       <TrailersMovie title={'title'} id={id}/>
-      <AllDevices film={film.id == id && film} />
+      <AllDevices film={film} />
     </div>
   );
 };

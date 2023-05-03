@@ -5,14 +5,14 @@ import PersonCard from './PersonCard'
 import { useLocale } from "../../hooks/useLocale";
 
 
-const CreatorsList = ({film}) => {
+const CreatorsList = ({film, id}) => {
   const {persons} = film;
   const { creatorsList: translation } = useLocale();
 
   return (
   
     <div className={styles.creatorsList}>
-        <div className={styles.creatorsList_title}><Link href={''} >{translation.title}</Link></div>
+        <div className={styles.creatorsList_title}><Link href={`/movies/${id}/person`} >{translation.title}</Link></div>
         <div className={styles.creatorsList_carousel}>
           {persons.map((el)=>(
             el.profession=='режиссеры' &&

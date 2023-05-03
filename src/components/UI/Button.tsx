@@ -15,6 +15,9 @@ const Button = (props) => {
     props.classN === "bookmark" && classes.bookmark,
     props.classN === "share" && classes.share,
     props.classN === "rating" && classes.rating,
+    props.classN === "bookmark_mobile" && classes.bookmark_mobile,
+    props.classN === "share_mobile" && classes.share_mobile,
+    props.classN === "trailer_mobile" && classes.trailer_mobile,
     props.classN === "allDevices" && classes.allDevices
   );
 

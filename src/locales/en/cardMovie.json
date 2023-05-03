@@ -14,10 +14,14 @@
     "subtitle":"Russian",
     "imgSound":"Image and sound.",
     "quality":"Actual quality may vary by device and copyright restrictions.",
+    "qualityMobile":"Quality",
     "showDetail":"Movie details",
     "hideDetail":"Collapse details",
+    "readMore":"Read more",
+    "hide":"Hide",
     "plot":"Interesting story",
     "evaluation":"evaluate",
     "ratings":"ratings",
-    "trailer":"Trailer"
+    "trailer":"Trailer",
+    "button":"Back"
 }
