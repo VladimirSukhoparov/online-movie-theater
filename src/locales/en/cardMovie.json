@@ -23,5 +23,9 @@
     "evaluation":"evaluate",
     "ratings":"ratings",
     "trailer":"Trailer",
-    "button":"Back"
+    "button":"Back",
+    "modalTitle":"Your assessment",
+    "modalDesc":"Ratings improve recommendations",
+    "modalBad":"very bad",
+    "modalPerf":"perfectly"
 }

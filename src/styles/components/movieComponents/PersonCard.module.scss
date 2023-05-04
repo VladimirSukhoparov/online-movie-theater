@@ -74,7 +74,7 @@
 }
 
 .persons {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     width: 25%;
     display: block;
     transition-duration: 0.4s;
@@ -92,28 +92,27 @@
         color: $color-white;
     }
     a {
-        width: 100%;
+        max-width: 100%;
+       height: auto;
         display: block;
-        margin-bottom: 24px;
         &:hover {
             text-decoration: none;
         }
     }
     &_image {
+        width: 100%;
         background-color: $color-black-button;
         border-radius: 50%;
         position: relative;
         overflow: hidden;
-        width: 128px;
-        height: 128px;
+        padding-top: 100%;
         img {
             border-radius: 50%;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 128px;
-            height: 128px;
+            width: 100%;
             object-fit: cover;
         }
     }
@@ -121,7 +120,7 @@
         margin-top: 8px;
         display: flex;
         flex-direction: column;
-        max-width: 128px;
+        width: 100%;
         overflow: hidden;
         font-size: 15px;
         line-height: 20px;

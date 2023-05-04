@@ -698,10 +698,10 @@ const CardMovie = ({ film }) => {
                     <div className={styles.popup_box}>
                         <div className={styles.popup_box_content}>
                             <p className={styles.popup_box_contentTitle}>
-                                Ваша оценка
+                            {translation.modalTitle}
                             </p>
                             <p className={styles.popup_box_contentSubTitle}>
-                                Оценки улучшают рекомендации
+                            {translation.modalDesc}
                             </p>
                             <ul className={styles.popup_box_contentList}>
                                 <li
@@ -796,8 +796,8 @@ const CardMovie = ({ film }) => {
                                 </li>
                             </ul>
                             <div className={styles.popup_box_contentLabels}>
-                                <p>очень плохо</p>
-                                <p>отлично</p>
+                                <p>{translation.modalBad}</p>
+                                <p>{translation.modalPerf}</p>
                             </div>
                         </div>
                     </div>
