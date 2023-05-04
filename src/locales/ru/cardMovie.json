@@ -23,5 +23,9 @@
     "evaluation":"оценить",
     "ratings":"оценка",
     "trailer":"Трейлер",
-    "button":"Назад"
+    "button":"Назад",
+    "modalTitle":"Ваша оценка",
+    "modalDesc":"Оценки улучшают рекомендации",
+    "modalBad":"очень плохо",
+    "modalPerf":"отлично"
 }
