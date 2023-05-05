@@ -1,7 +1,7 @@
 import SortingDropdown from "../../../components/UI/SortingDropdown";
 
 export default {
-  title: "ReusedСomponents/SortingDropdown",
+  title: "UI/SortingDropdown",
   component: SortingDropdown,
 };
 

@@ -3,10 +3,10 @@ import Button from "../../../components/UI/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 
-import "../../../styles/components/reusedСomponents/Button.module.scss";
+import "../../../styles/components/UI/Button.module.scss";
 
 export default {
-  title: "ReusedСomponents/Button",
+  title: "UI/Button",
   component: Button,
   argTypes: {
     type: {
