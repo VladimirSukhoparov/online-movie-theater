@@ -1,0 +1,93 @@
+.tick-label {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  font-style: normal;
+  color: rgba(217, 215, 224, 0.8);
+  transition-duration: 0.4s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &_checked {
+    color: #fff;
+  }
+
+  & span {
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  & input {
+    display: none;
+  }
+}
+
+.simple-label {
+  width: 100%;
+  cursor: pointer;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 32px;
+  color: #fff;
+  transition-duration: 0.4s;
+  //margin-left: 12px;
+
+  &_checked {
+    background-color: #a5a1b2;
+    border-color: #a5a1b2;
+  }
+
+  & input {
+    display: none;
+  }
+
+  & span {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+    font-style: normal;
+    white-space: nowrap;
+  }
+}
+
+.image-label {
+  width: 100%;
+  cursor: pointer;
+  padding: 16px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 6px;
+  color: #fff;
+  transition-duration: 0.4s;
+  background-color: #312b45;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  //   overflow: hidden;
+  //   white-space: nowrap;
+  //   text-overflow: ellipsis;
+
+  &_checked {
+    background-color: #a5a1b2;
+    border-color: #a5a1b2;
+  }
+
+  & input {
+    display: none;
+  }
+
+  & span {
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 16px;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 90px;
+    text-align: center;
+  }
+}
